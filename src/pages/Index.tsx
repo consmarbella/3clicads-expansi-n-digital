@@ -61,10 +61,6 @@ const Index = () => {
 
       {/* Hero */}
       <section className="text-center px-6 pt-16 pb-20 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase px-4 py-1.5 rounded-full mb-8">
-          <Zap className="w-3.5 h-3.5" />
-          Herramienta #1 de Anuncios DIY
-        </div>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
           Deja de Gastar Dinero en{" "}
           <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'var(--gradient-hero)' }}>
