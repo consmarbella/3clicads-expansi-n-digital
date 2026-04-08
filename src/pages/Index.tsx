@@ -1,216 +1,208 @@
-import { CheckCircle, Zap, BookOpen, Search, UserPlus, ArrowRight } from "lucide-react";
+import { CheckCircle, Zap, BookOpen, Search, UserPlus, ArrowRight, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
   {
     icon: CheckCircle,
-    title: "Espía de Competencia",
+    title: "Espía de Competencia con IA",
     description: "Analizamos las keywords de tus competidores y creamos anuncios que los superan. Automáticamente.",
-    tag: "IA",
+    num: "01",
   },
   {
     icon: Zap,
     title: "Copywriting Instantáneo",
     description: "15 títulos y 4 descripciones por grupo de anuncios, optimizados para clics que convierten.",
-    tag: "COPY",
+    num: "02",
   },
   {
     icon: BookOpen,
     title: "Guía Paso a Paso",
     description: "Checklist sencillo para copiar, pegar y lanzar. Aunque nunca hayas tocado Google Ads.",
-    tag: "GUÍA",
+    num: "03",
   },
   {
     icon: Search,
     title: "Campañas PSEO",
     description: "Posicionamos cientos de páginas automáticamente para dominar los resultados de búsqueda.",
-    tag: "SEO",
+    num: "04",
   },
   {
     icon: UserPlus,
-    title: "Cuentas Profesionales",
-    description: "Configuramos tu cuenta de Google Ads con estructura, conversiones y seguimiento listos para escalar.",
-    tag: "SETUP",
+    title: "Cuentas Profesionales Google Ads",
+    description: "Configuramos tu cuenta con estructura, conversiones y seguimiento listos para escalar.",
+    num: "05",
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] as const } },
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.08, ease: "easeOut" },
+  }),
 };
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      {/* Glow effects */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-0 right-0 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px] pointer-events-none" />
+
       {/* Nav */}
       <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex items-center justify-between px-6 md:px-12 py-6 max-w-7xl mx-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 flex items-center justify-between px-6 md:px-12 py-5 max-w-7xl mx-auto"
       >
-        <span className="text-2xl font-bold text-foreground tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-          3clic<span className="text-primary">Ads</span>
-        </span>
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
+            <Zap className="w-4 h-4 text-primary-foreground" />
+          </div>
+          <span className="text-lg font-bold tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
+            3clicAds
+          </span>
+        </div>
         <a
           href="#"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border border-border rounded-full px-5 py-2 hover:bg-card"
+          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          Iniciar Sesión
+          Iniciar Sesión →
         </a>
       </motion.nav>
 
       {/* Hero */}
-      <section className="px-6 pt-20 pb-28 max-w-7xl mx-auto">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-block mb-6"
-          >
-            <span className="text-xs font-semibold tracking-widest uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full">
-              Hazlo tú mismo
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-foreground mb-8"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Deja de pagar{" "}
-            <em className="text-primary">agencias.</em>
-            <br />
-            Lanza tú mismo.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10"
-          >
-            Keywords, copy de anuncios y estrategia del top 1% de agencias.
-            Genera campañas profesionales en segundos.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <a
-              href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 bg-foreground text-background font-semibold text-base px-8 py-4 rounded-full hover:opacity-90 transition-all"
-            >
-              Obtener Acceso 15 Días
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 border border-border text-muted-foreground font-medium text-sm px-8 py-4 rounded-full hover:bg-card transition-colors"
-            >
-              🔑 Entrar con ID de Orden
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="border-t border-border" />
-      </div>
-
-      {/* Services */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="relative z-10 px-6 pt-24 md:pt-32 pb-32 max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="mb-16"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mb-8"
         >
-          <h2
-            className="text-4xl md:text-5xl text-foreground mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Todo lo que necesitas
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-md">
-            Cinco herramientas para competir contra cualquier agencia.
-          </p>
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-medium tracking-wider uppercase text-primary border border-primary/30 bg-primary/5 px-4 py-1.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Plataforma de IA para Ads
+          </span>
         </motion.div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1"
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-foreground mb-8 max-w-4xl"
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
+          Campañas que las agencias
+          <br />
+          <span className="text-primary">cobran miles.</span>
+          <br />
+          En segundos.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed mb-12"
+        >
+          Keywords exactas, copy de alto rendimiento y estrategia del top 1%.
+          Genera, lanza y escala sin intermediarios.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
+          className="flex flex-col sm:flex-row gap-3"
+        >
+          <a
+            href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_hsl(150_100%_50%/0.3)]"
+          >
+            Obtener Acceso 15 Días
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 border border-border text-muted-foreground font-medium text-sm px-8 py-4 rounded-lg hover:bg-secondary hover:text-foreground transition-colors"
+          >
+            🔑 Entrar con ID de Orden
+          </a>
+        </motion.div>
+      </section>
+
+      {/* Services */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-32">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-3 mb-16"
+        >
+          <div className="w-px h-8 bg-primary/50" />
+          <span className="text-sm font-mono text-muted-foreground tracking-wider uppercase">
+            Servicios
+          </span>
+        </motion.div>
+
+        <div className="space-y-0">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              variants={item}
-              whileHover={{ y: -4 }}
-              className={`group relative p-8 md:p-10 border-b border-r border-border transition-colors hover:bg-card cursor-default ${
-                i === 0 ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              custom={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-40px" }}
+              className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 border-t border-border last:border-b hover:bg-card/50 transition-colors px-4 -mx-4 rounded-lg cursor-default"
             >
-              <div className="flex items-start justify-between mb-8">
-                <span className="text-[11px] font-bold tracking-widest text-muted-foreground/60 uppercase">
-                  {s.tag}
-                </span>
-                <s.icon className="w-5 h-5 text-muted-foreground/40 group-hover:text-primary transition-colors" />
+              <span className="text-xs font-mono text-muted-foreground/50 w-8 shrink-0">
+                {s.num}
+              </span>
+              <div className="flex items-center gap-4 md:w-80 shrink-0">
+                <s.icon className="w-5 h-5 text-primary/60 group-hover:text-primary transition-colors shrink-0" />
+                <h3 className="text-lg md:text-xl font-semibold text-foreground tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+                  {s.title}
+                </h3>
               </div>
-              <h3
-                className="text-2xl text-foreground mb-3"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                {s.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                 {s.description}
               </p>
+              <ChevronRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all hidden md:block shrink-0" />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="max-w-7xl mx-auto px-6 pb-32">
+      {/* CTA */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-32">
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-foreground rounded-3xl p-12 md:p-20 text-center"
+          className="border border-border rounded-2xl p-12 md:p-20 text-center bg-card relative overflow-hidden"
         >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
           <h2
-            className="text-3xl md:text-5xl text-background mb-4"
+            className="relative text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            ¿Listo para lanzar?
+            ¿Listo para escalar?
           </h2>
-          <p className="text-background/60 text-lg mb-10 max-w-md mx-auto">
-            Empieza hoy con acceso completo por 15 días.
+          <p className="relative text-muted-foreground text-base mb-10 max-w-md mx-auto">
+            Acceso completo a todas las herramientas por 15 días.
           </p>
           <a
             href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-base px-10 py-4 rounded-full hover:opacity-90 transition-all"
+            className="relative group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-10 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_40px_-8px_hsl(150_100%_50%/0.4)]"
           >
             Comenzar Ahora
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -219,8 +211,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} 3clicAds. Todos los derechos reservados.
+      <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
+        © {new Date().getFullYear()} 3clicAds
       </footer>
     </div>
   );
