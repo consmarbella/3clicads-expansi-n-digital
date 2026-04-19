@@ -1,5 +1,6 @@
 import { CheckCircle, Zap, BookOpen, Search, UserPlus, ArrowRight, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -65,12 +66,20 @@ const Index = () => {
             3clicAds
           </span>
         </div>
-        <a
-          href="#"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Iniciar Sesión →
-        </a>
+        <div className="flex items-center gap-6">
+          <Link
+            to="/auditoria"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Auditoría
+          </Link>
+          <a
+            href="#"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Iniciar Sesión →
+          </a>
+        </div>
       </motion.nav>
 
       {/* Hero */}
