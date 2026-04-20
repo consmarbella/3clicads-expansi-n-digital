@@ -251,27 +251,50 @@ const Auditoria = () => {
           className="border border-border rounded-2xl bg-card overflow-hidden"
         >
           {/* Header del reporte */}
-          <div className="flex flex-col md:flex-row md:items-center gap-8 p-8 md:p-10 border-b border-border">
-            <ScoreGauge target={23} />
+          <div className="p-8 md:p-10 border-b border-border space-y-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              <ScoreGauge target={23} />
 
-            <div className="flex-1 space-y-3">
-              <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                Resumen del análisis
+              <div className="flex-1 space-y-3">
+                <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                  Resumen del análisis
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-destructive/10 border border-destructive/30 text-destructive text-sm font-semibold">
+                    <AlertCircle className="w-4 h-4" />
+                    4 errores críticos
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[hsl(33_85%_55%/0.1)] border border-[hsl(33_85%_55%/0.3)] text-[hsl(33_85%_55%)] text-sm font-semibold">
+                    <AlertTriangle className="w-4 h-4" />
+                    3 advertencias
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Sitio con problemas técnicos graves de indexación. Google no puede leer
+                  correctamente el contenido principal.
+                </p>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-destructive/10 border border-destructive/30 text-destructive text-sm font-semibold">
-                  <AlertCircle className="w-4 h-4" />
-                  4 errores críticos
-                </span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[hsl(33_85%_55%/0.1)] border border-[hsl(33_85%_55%/0.3)] text-[hsl(33_85%_55%)] text-sm font-semibold">
-                  <AlertTriangle className="w-4 h-4" />
-                  3 advertencias
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Sitio con problemas técnicos graves de indexación. Google no puede leer
-                correctamente el contenido principal.
-              </p>
+            </div>
+
+            {/* Mini scores */}
+            <div className="grid grid-cols-3 gap-3 md:gap-4 pt-2">
+              {miniScores.map((m) => (
+                <div
+                  key={m.label}
+                  className="border border-destructive/30 bg-destructive/5 rounded-lg p-3 md:p-4 text-center"
+                >
+                  <div className="text-[10px] md:text-xs font-mono uppercase tracking-wider text-muted-foreground mb-1">
+                    {m.label}
+                  </div>
+                  <div
+                    className="text-xl md:text-2xl font-bold text-destructive tabular-nums"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {m.score}
+                    <span className="text-xs md:text-sm text-muted-foreground">/100</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -286,18 +309,23 @@ const Auditoria = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ duration: 0.35, delay: i * 0.06 }}
-                  className="flex items-center gap-4 px-6 md:px-10 py-4 hover:bg-secondary/30 transition-colors"
+                  className="flex items-start gap-4 px-6 md:px-10 py-4 hover:bg-secondary/30 transition-colors"
                 >
                   <span
-                    className={`w-2.5 h-2.5 rounded-full shrink-0 ${
+                    className={`w-2.5 h-2.5 rounded-full shrink-0 mt-2 ${
                       isCritical
                         ? "bg-destructive shadow-[0_0_10px_hsl(var(--destructive))]"
                         : "bg-[hsl(33_85%_55%)] shadow-[0_0_10px_hsl(33_85%_55%)]"
                     }`}
                   />
-                  <p className="text-sm md:text-base text-foreground flex-1">{e.label}</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm md:text-base text-foreground">{e.label}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground mt-1 leading-relaxed">
+                      {e.hint}
+                    </p>
+                  </div>
                   <span
-                    className={`text-[10px] md:text-xs font-mono font-semibold uppercase tracking-wider px-2 py-1 rounded border shrink-0 ${
+                    className={`text-[10px] md:text-xs font-mono font-semibold uppercase tracking-wider px-2 py-1 rounded border shrink-0 mt-1 ${
                       isCritical
                         ? "bg-destructive/10 border-destructive/30 text-destructive"
                         : "bg-[hsl(33_85%_55%/0.1)] border-[hsl(33_85%_55%/0.3)] text-[hsl(33_85%_55%)]"
@@ -311,16 +339,28 @@ const Auditoria = () => {
           </div>
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-base md:text-lg text-muted-foreground mt-8"
+          className="text-center mt-8 space-y-5"
         >
-          Este es solo un ejemplo.{" "}
-          <span className="text-foreground font-semibold">¿Cómo está tu sitio?</span>
-        </motion.p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Esto es solo una muestra.{" "}
+            <span className="text-foreground font-semibold">
+              Tu auditoría incluirá todos los errores reales de tu sitio
+            </span>{" "}
+            con orientación de corrección para cada uno.
+          </p>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="group inline-flex items-center gap-2 border border-primary/50 text-primary font-semibold text-sm px-6 py-3 rounded-lg hover:bg-primary/10 hover:border-primary transition-all"
+          >
+            Ver auditoría completa de ejemplo
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </motion.div>
       </section>
 
       {/* Qué incluye */}
