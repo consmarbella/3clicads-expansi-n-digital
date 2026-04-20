@@ -445,6 +445,8 @@ const Auditoria = () => {
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
         3clicAds — Santiago, Chile · contacto@3clicads.com
       </footer>
+
+      <FullAuditModal open={modalOpen} onOpenChange={setModalOpen} />
     </div>
   );
 };
