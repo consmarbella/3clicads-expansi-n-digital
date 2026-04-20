@@ -11,28 +11,40 @@ import {
   AlertTriangle,
   AlertCircle,
 } from "lucide-react";
+import FullAuditModal from "@/components/audit/FullAuditModal";
 
 const errors = [
   {
     severity: "critical",
     label: "Sin etiqueta H1 — Google no entiende tu página",
+    hint: "Se debe definir un título principal único con la palabra clave del negocio.",
   },
   {
     severity: "critical",
     label: "14 imágenes sin descripción — invisibles para Google",
+    hint: "Se debe completar la descripción de cada imagen para que Google las indexe.",
   },
   {
     severity: "critical",
     label: "Datos estructurados corruptos — schema inválido",
+    hint: "Se debe validar y corregir el schema para aparecer con información enriquecida en Google.",
   },
   {
     severity: "critical",
     label: "Formularios sin HTTPS — riesgo de seguridad",
+    hint: "Se debe activar certificado SSL y redirigir todo el tráfico a la versión segura.",
   },
   {
     severity: "warning",
     label: "Título cortado en resultados de Google",
+    hint: "Se debe ajustar a máximo 60 caracteres incluyendo la palabra clave principal.",
   },
+];
+
+const miniScores = [
+  { label: "SEO técnico", score: 23 },
+  { label: "Rendimiento", score: 31 },
+  { label: "Seguridad", score: 12 },
 ];
 
 const includes = [
@@ -119,6 +131,7 @@ const ScoreGauge = ({ target = 23 }: { target?: number }) => {
 
 const Auditoria = () => {
   const exampleRef = useRef<HTMLElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const scrollToExample = () => {
     exampleRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
