@@ -1,39 +1,328 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
     <title>3clicAds - Auditoría SEO</title>
-    <meta name="description" content="3Clicads: Expansión Digital amplía tu presencia online con servicios de SEO y Google Ads.">
-    <meta name="author" content="Lovable" />
+    <meta
+      name="description"
+      content="3clicAds: plataforma de IA para Ads, auditoría SEO, copywriting y campañas para escalar tu presencia online."
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c9500ed8-f6db-47a8-b66c-8a9e5547715e/id-preview-c5a4c526--c02c8b96-5faf-4829-b844-90868c414ddd.lovable.app-1776647507067.png">
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        color: #111111;
+        line-height: 1.5;
+      }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c9500ed8-f6db-47a8-b66c-8a9e5547715e/id-preview-c5a4c526--c02c8b96-5faf-4829-b844-90868c414ddd.lovable.app-1776647507067.png">
-    <meta property="og:title" content="3clicAds - Auditoría SEO">
-  <meta name="twitter:title" content="3clicAds - Auditoría SEO">
-  <meta property="og:description" content="3Clicads: Expansión Digital amplía tu presencia online con servicios de SEO y Google Ads.">
-  <meta name="twitter:description" content="3Clicads: Expansión Digital amplía tu presencia online con servicios de SEO y Google Ads.">
+      a {
+        color: #0a66c2;
+        text-decoration: none;
+      }
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2CL7BE8MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-R2CL7BE8MK');
-    </script>
-</head>
+      a:hover {
+        text-decoration: underline;
+      }
 
+      .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        border-bottom: 1px solid #e5e5e5;
+        background: #fff;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        font-size: 24px;
+        font-weight: 700;
+        color: #111;
+      }
+
+      nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .eyebrow {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #666;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        font-size: 52px;
+        line-height: 1.1;
+        margin: 0 0 20px;
+        max-width: 800px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #444;
+        max-width: 760px;
+        margin: 0 0 30px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        background: #111;
+        color: #fff;
+      }
+
+      .btn-secondary {
+        border: 1px solid #ccc;
+        color: #111;
+        background: #fff;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #666;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 24px;
+      }
+
+      .card-number {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+      }
+
+      .card p {
+        margin: 0;
+        color: #444;
+      }
+
+      .cta {
+        padding: 55px 0;
+      }
+
+      .cta-box {
+        border: 1px solid #e5e5e5;
+        border-radius: 18px;
+        padding: 36px;
+        background: #fafafa;
+      }
+
+      .cta h2 {
+        margin: 0 0 12px;
+        font-size: 36px;
+      }
+
+      .cta p {
+        margin: 0 0 22px;
+        color: #444;
+        font-size: 18px;
+      }
+
+      footer {
+        margin-top: 40px;
+        border-top: 1px solid #e5e5e5;
+        padding: 28px 0 40px;
+        text-align: center;
+        color: #555;
+      }
+
+      footer p {
+        margin: 6px 0;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .services {
+          grid-template-columns: 1fr;
+        }
+
+        .cta h2 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header>
+      <div class="container header-inner">
+        <div class="brand">3clicAds</div>
+        <nav>
+          <a href="/auditoria">Auditoría</a>
+          <a href="#">Iniciar Sesión →</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="eyebrow">PLATAFORMA DE IA PARA ADS</div>
+          <h1>Campañas que las agencias cobran miles. En segundos.</h1>
+          <p>
+            Keywords exactas, copy de alto rendimiento y estrategia del top 1%.
+            Genera, lanza y escala sin intermediarios.
+          </p>
+          <div class="buttons">
+            <a
+              class="btn btn-primary"
+              href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Obtener Acceso 15 Días
+            </a>
+            <a class="btn btn-secondary" href="#">
+              🔑 Entrar con ID de Orden
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title">SERVICIOS</div>
+
+          <div class="services">
+            <article class="card">
+              <div class="card-number">01</div>
+              <h3>Espía de Competencia con IA</h3>
+              <p>
+                Analizamos las keywords de tus competidores y creamos anuncios
+                que los superan. Automáticamente.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">02</div>
+              <h3>Copywriting Instantáneo</h3>
+              <p>
+                15 títulos y 4 descripciones por grupo de anuncios, optimizados
+                para clics que convierten.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">03</div>
+              <h3>Guía Paso a Paso</h3>
+              <p>
+                Checklist sencillo para copiar, pegar y lanzar. Aunque nunca
+                hayas tocado Google Ads.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">04</div>
+              <h3>Campañas PSEO</h3>
+              <p>
+                Posicionamos cientos de páginas automáticamente para dominar los
+                resultados de búsqueda.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">05</div>
+              <h3>Cuentas Profesionales Google Ads</h3>
+              <p>
+                Configuramos tu cuenta con estructura, conversiones y
+                seguimiento listos para escalar.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div class="cta-box">
+            <h2>¿Listo para escalar?</h2>
+            <p>Acceso completo a todas las herramientas por 15 días.</p>
+            <a
+              class="btn btn-primary"
+              href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Comenzar Ahora
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 3clicAds</p>
+        <p>
+          Contacto:
+          <a href="mailto:contacto@3clicads.com">contacto@3clicads.com</a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
