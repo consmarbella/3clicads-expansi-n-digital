@@ -1,9 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "not": { "source": "/(.*\\.html)" },
-      "destination": "/index.html"
-    }
+    { "source": "/guard4.html", "destination": "/guard4.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
