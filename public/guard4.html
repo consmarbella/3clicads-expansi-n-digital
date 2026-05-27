@@ -84,7 +84,7 @@ function onCambio() {
 async function estimar(usd) {
   var el = document.getElementById('estimateVal');
   try {
-    var r = await fetch('/api/estimate?from_amount=' + usd);
+    var r = await fetch('https://dolarexpress.cl/api/estimate?from_amount=' + usd);
     var data = await r.json();
     if (!r.ok) throw new Error(data.error || 'Error');
     el.textContent = parseFloat(data.value).toFixed(8) + ' BTC';
@@ -104,7 +104,7 @@ function pagar() {
   btn.textContent = 'Creando transacci\u00f3n...';
 
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', '/api/create-btc', true);
+  xhr.open('POST', 'https://dolarexpress.cl/api/create-btc', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onload = function() {
     if (xhr.status !== 200) {
