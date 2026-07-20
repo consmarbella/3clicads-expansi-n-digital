@@ -693,7 +693,12 @@ const Auditoria = () => {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
-        3clicAds — Santiago, Chile · contacto@3clicads.com
+        <div className="space-y-2">
+          <div>
+            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+          </div>
+          <div className="mt-4">3clicAds — Santiago, Chile</div>
+        </div>
       </footer>
 
       {/* Sticky bottom banner */}

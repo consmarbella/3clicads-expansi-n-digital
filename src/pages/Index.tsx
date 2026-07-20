@@ -33,6 +33,12 @@ const services = [
     description: "Configuramos tu cuenta con estructura, conversiones y seguimiento listos para escalar.",
     num: "05",
   },
+  {
+    icon: Search,
+    title: "Programmatic SEO a Medida",
+    description: "Desarrollamos e implementamos estrategias de Programmatic SEO a medida para dominar los resultados de búsqueda en tu nicho.",
+    num: "06",
+  },
 ];
 
 const fadeUp = {
@@ -227,7 +233,10 @@ const Index = () => {
               Términos y Condiciones
             </Link>
           </div>
-          <div>© {new Date().getFullYear()} 3clicAds</div>
+          <div>
+            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+          </div>
+          <div className="mt-4">© {new Date().getFullYear()} 3clicAds</div>
         </div>
       </footer>
     </div>
