@@ -5,6 +5,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Auditoria from "./pages/Auditoria.tsx";
+import Generador from "./pages/Generador.tsx";
+import BulkGenerator from "./pages/BulkGenerator.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import Layout from "./components/Layout.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -15,12 +19,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/auditoria" element={<Auditoria />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/auditoria" element={<Auditoria />} />
+              <Route path="/generador" element={<Generador />} />
+              <Route path="/bulk" element={<BulkGenerator />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
