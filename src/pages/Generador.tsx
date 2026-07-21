@@ -34,6 +34,40 @@ export default function Generador() {
   const [isPushingApi, setIsPushingApi] = useState(false);
   const [apiPushSuccess, setApiPushSuccess] = useState(false);
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    
+    if (step === "PROCESSING" && jobId) {
+      interval = setInterval(async () => {
+        try {
+          const res = await fetch(`http://127.0.0.1:8000/api/bulk/status/${jobId}`);
+          if (!res.ok) return;
+          const data = await res.json();
+          
+          if (data.status === "completed") {
+            setJobResults(data.results);
+            setStep("DONE");
+          } else if (data.status === "error") {
+             toast({
+                title: "Error en procesamiento",
+                description: data.error,
+                variant: "destructive"
+             });
+             setStep("FORM");
+          } else {
+            setProgress(data.progress);
+            setTotal(data.total);
+            setJobStatusText(data.status_text || "Procesando...");
+          }
+        } catch (e) {
+          console.error("Error polling status", e);
+        }
+      }, 3000);
+    }
+    
+    return () => clearInterval(interval);
+  }, [step, jobId]);
+
   // Character limit validation helpers
   const cleanHeadline = (text: string) => {
     let cleaned = text.replace(/^["'\d\.\-\s]+/, '').replace(/["']/g, '').trim();
@@ -157,127 +191,35 @@ Devuelve UNICAMENTE un JSON estricto sin markdown:
     setJobResults([]);
     setProgress(0);
     setTotal(selectedItems.length);
+    setJobStatusText("Conectando con el Backend Multi-Agente (LangGraph)...");
     
     const rows = selectedItems.map(item => ({
       producto: item.producto || "Servicio Principal",
       rubro: item.rubro || formData.business_name,
-      atributos: formData.brand_tone,
-      exclusiones: formData.excluded_services,
-      ubicacion: formData.location,
-      objetivo: formData.campaign_objective,
-      url_final: formData.website_url,
       search_volume: item.search_volume,
       cpc_estimate: item.cpc_estimate,
-      competition: item.competition
+      competition: item.competition,
+      ubicacion: formData.location,
+      url_final: formData.website_url
     }));
-    
-    const GEMINI_KEY = "AIzaSyBuYWYikeDWoNlr8cIfd49Tw9vb1V-7woc";
 
     try {
-      const results = [];
-      for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        setProgress(i + 1);
-        setJobStatusText(`🧠 Generando anuncios RSA y lista anti-basura para SKU ${i+1}/${rows.length}: ${row.producto}...`);
-        
-        const prompt = `Eres el Director General de Media Buying en Google Ads para una agencia de alto rendimiento.
-Genera la campaña completa en Google Ads para el SKU / Grupo de Anuncios: "${row.producto}".
+      const response = await fetch('http://127.0.0.1:8000/api/generate-campaign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          business_name: formData.business_name || formData.website_url,
+          website_url: formData.website_url,
+          skus: rows
+        })
+      });
 
-DATOS DE ENTRADA:
-- SKU / Producto: ${row.producto}
-- Rubro/Empresa: ${row.rubro}
-- Ubicación Objetivo: ${row.ubicacion || 'Santiago, Chile'}
-- URL Final: ${row.url_final || 'https://www.3clicads.com'}
-
-REQUISITOS OBLIGATORIOS Y STRICTOS:
-1. HEADLINES: Genera EXACTAMENTE 15 títulos persuasivos. Cada título DEBE tener 30 CARACTERES O MENOS. Incluye el nombre del SKU, llamadas a la acción directas, garantías de confianza local ("Pago en 10 Minutos", "100% Seguro", "Atención RUT", "Sin Ocultos") y ofertas comerciales.
-2. DESCRIPTIONS: Genera EXACTAMENTE 4 descripciones persuasivas. Cada descripción DEBE tener 90 CARACTERES O MENOS.
-3. KEYWORDS: Genera entre 12 a 15 palabras clave hiper-específicas exclusivamente en concordancia Exacta ("[palabra]") y Frase ("\"palabra\""). CERO palabras en concordancia amplia.
-4. NEGATIVE KEYWORDS: Genera AL MENOS 30 PALABRAS CLAVE NEGATIVAS HIPER-ESPECÍFICAS adaptadas a este rubro concreto.
-   Incluye:
-   - Competidores/Bancos: bancoestado, santander, bci, falabella, ripley, scotiabank, itau, bancochile, coopeuch, tenpo, mach
-   - Duda/Estafa/Quejas: estafa, reclamos, queja, denuncia, sernac, foro, opiniones, cmf, fijate, es verdad, ilegal, peligroso
-   - Informativos/Gratis: que es, como hacer, ley, pdf, gratis, youtube, calculadora, excel, plantilla, sii, impuestos, banco central, dolar hoy, dolar observador, western union, tutorial, curso
-   - Empleo/Legal: trabajo, empleo, curriculum, vacantes, practica, abogado gratis
-
-Devuelve UNICAMENTE un JSON estricto sin markdown ni explicaciones:
-{
-  "headlines": ["Array de 15 titulos de maximo 30 caracteres cada uno"],
-  "descriptions": ["Array de 4 descripciones de maximo 90 caracteres cada una"],
-  "keywords": [
-    {"texto": "palabra clave exacta", "tipo": "Exact"},
-    {"texto": "palabra clave frase", "tipo": "Phrase"}
-  ],
-  "negative_keywords": ["array de al menos 30 palabras clave negativas hiper especificas"]
-}`;
-
-        try {
-          const gRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-          });
-          const gData = await gRes.json();
-          const rawText = gData.candidates?.[0]?.content?.parts?.[0]?.text || "";
-          const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-          if (jsonMatch) {
-            const parsed = JSON.parse(jsonMatch[0]);
-            // Enforce character limits strictly
-            parsed.headlines = (parsed.headlines || []).map(cleanHeadline).filter(Boolean).slice(0, 15);
-            parsed.descriptions = (parsed.descriptions || []).map(cleanDescription).filter(Boolean).slice(0, 4);
-            results.push({ row, rsa: parsed });
-          } else {
-            throw new Error("Invalid JSON format");
-          }
-        } catch (e) {
-          // Robust Fallback with strict limits
-          results.push({
-            row,
-            rsa: {
-              headlines: [
-                cleanHeadline(`${row.producto} Oficial`),
-                cleanHeadline(`Vender ${row.producto}`),
-                cleanHeadline("Pago Inmediato 10 Min"),
-                cleanHeadline("100% Seguro y Legal"),
-                cleanHeadline("Sin Cobros Ocultos"),
-                cleanHeadline("Transferencia al Instante"),
-                cleanHeadline("Atención WhatsApp"),
-                cleanHeadline("Garantía de Confianza"),
-                cleanHeadline("Mejor Precio Dólar"),
-                cleanHeadline("Cupo Dólar Express"),
-                cleanHeadline("Cotiza tu Cupo Hoy"),
-                cleanHeadline("Servicio Directo Chile"),
-                cleanHeadline("RUT Verificado"),
-                cleanHeadline("Transacción Segura"),
-                cleanHeadline("Atención Inmediata 24/7")
-              ],
-              descriptions: [
-                cleanDescription(`Vende tu ${row.producto} de forma 100% segura y con pago en 10 minutos.`),
-                cleanDescription(`No arriesgues tu dinero. Procesa tu ${row.producto} con expertos. Sin cobros ocultos.`),
-                cleanDescription(`La mejor tasa para tu ${row.producto}. Transferencia inmediata a tu cuenta bancaria.`),
-                cleanDescription(`Somos la opción #1 en Chile para monetizar tu ${row.producto}. ¡Consulta hoy!`)
-              ],
-              keywords: [
-                { texto: `vender ${row.producto} santiago`, tipo: "Exact" },
-                { texto: `monetizar ${row.producto} pago inmediato`, tipo: "Exact" },
-                { texto: `procesar ${row.producto} seguro`, tipo: "Phrase" },
-                { texto: `transferencia ${row.producto} chile`, tipo: "Exact" },
-                { texto: `precio ${row.producto} hoy`, tipo: "Phrase" },
-                { texto: `donde vender ${row.producto}`, tipo: "Exact" }
-              ],
-              negative_keywords: [
-                "estafa", "reclamos", "queja", "denuncia", "sernac", "foro", "opiniones", "cmf", "fijate", "es verdad", "ilegal",
-                "bancoestado", "santander", "bci", "falabella", "ripley", "scotiabank", "itau", "bancochile", "coopeuch", "tenpo", "mach",
-                "que es", "como hacer", "ley", "pdf", "gratis", "youtube", "calculadora", "excel", "plantilla", "sii", "impuestos", "banco central", "western union", "trabajo", "empleo"
-              ]
-            }
-          });
-        }
-      }
-      setJobResults(results);
-      setStep("DONE");
+      if (!response.ok) throw new Error("Error conectando al backend de Python");
+      
+      const data = await response.json();
+      setJobId(data.job_id);
     } catch (err: any) {
-      toast({ title: "Error", description: err.message || "Error al generar anuncios", variant: "destructive" });
+      toast({ title: "Error de Servidor", description: "El backend de Python no está en ejecución. Debes iniciarlo.", variant: "destructive" });
       setStep("REVIEW");
     }
   };
