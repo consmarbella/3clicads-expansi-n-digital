@@ -16,7 +16,9 @@ export default function Generador() {
     main_service: '',
     excluded_services: '',
     brand_tone: '',
-    campaign_objective: 'Unspecified'
+    campaign_objective: 'Unspecified',
+    value_proposition: '',
+    daily_budget: ''
   });
 
   const [jobId, setJobId] = useState<string | null>(null);
@@ -413,11 +415,13 @@ Devuelve UNICAMENTE un JSON estricto sin markdown ni explicaciones:
       business_name: 'DolarExpress Chile',
       website_url: 'https://www.dolarexpress.cl',
       location: 'Santiago, Chile',
-      client_type: 'Finanzas & Cupo Dólar',
+      client_type: 'Unspecified (Auto-detect)',
       main_service: 'Monetización y venta de cupo en dólares de tarjetas de crédito',
       excluded_services: 'Préstamos informales, créditos consumo',
       brand_tone: 'Directo, seguro, profesional, atención express 10 minutos',
-      campaign_objective: 'Maximize Conversions / Leads'
+      campaign_objective: 'Maximize Conversions',
+      value_proposition: 'Pago en 10 minutos, 100% legal, sin cobros ocultos.',
+      daily_budget: '15000'
     });
   };
 
@@ -460,71 +464,144 @@ Devuelve UNICAMENTE un JSON estricto sin markdown ni explicaciones:
             <div className="flex items-center justify-between pb-6 mb-8 border-b border-slate-800">
               <div className="flex items-center gap-2 text-emerald-400 font-bold text-lg">
                 <LayoutTemplate className="w-5 h-5" />
-                Ingesta de Datos del Negocio
+                Datos de Ingesta del Cliente
               </div>
               <button type="button" onClick={autofill} className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 px-3.5 py-2 rounded-xl flex items-center gap-1.5 transition">
-                <Wand2 className="w-3.5 h-3.5" /> Probar Demo DolarExpress
+                <Wand2 className="w-3.5 h-3.5" /> Auto-Completar Ejemplo
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-8">
+              {/* Seccion 1: Identidad */}
               <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Nombre del Negocio / Marca</label>
-                <input 
-                  value={formData.business_name} onChange={e => setFormData({...formData, business_name: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                  placeholder="Ej: DolarExpress Chile" 
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">URL del Sitio Web (Para Auto-Escanear)</label>
-                <div className="relative">
-                  <Globe2 className="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500" />
-                  <input 
-                    required
-                    value={formData.website_url} onChange={e => setFormData({...formData, website_url: e.target.value})}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                    placeholder="https://www.dolarexpress.cl" 
-                  />
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-slate-500" /> Identidad del Negocio
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Nombre del Negocio</label>
+                    <input 
+                      value={formData.business_name} onChange={e => setFormData({...formData, business_name: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                      placeholder="ej. Acme Plumbing" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">URL del Sitio Web</label>
+                    <div className="relative">
+                      <Globe2 className="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500" />
+                      <input 
+                        required
+                        value={formData.website_url} onChange={e => setFormData({...formData, website_url: e.target.value})}
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                        placeholder="https://..." 
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Ubicación (Ciudad/País)</label>
+                    <input 
+                      required
+                      value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                      placeholder="ej. Austin, Texas" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Tipo de Cliente</label>
+                    <select 
+                      value={formData.client_type} onChange={e => setFormData({...formData, client_type: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition appearance-none"
+                    >
+                      <option>Unspecified (Auto-detect)</option>
+                      <option>E-Commerce</option>
+                      <option>Local Service</option>
+                      <option>B2B Lead Gen</option>
+                      <option>SaaS</option>
+                      <option>Info Product</option>
+                    </select>
+                  </div>
                 </div>
               </div>
+
+              {/* Seccion 2: Servicio & Estrategia */}
               <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Ubicación Objetivo (Ciudad / País)</label>
-                <input 
-                  required
-                  value={formData.location} onChange={e => setFormData({...formData, location: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                  placeholder="Ej: Santiago, Chile" 
-                />
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                  <Briefcase className="w-4 h-4 text-slate-500" /> Servicio & Estrategia
+                </h4>
+                <div className="grid grid-cols-1 gap-6">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Servicio / Producto Principal</label>
+                    <input 
+                      value={formData.main_service} onChange={e => setFormData({...formData, main_service: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                      placeholder="ej. Emergency Residential Plumbing" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Servicios Excluidos</label>
+                    <input 
+                      value={formData.excluded_services} onChange={e => setFormData({...formData, excluded_services: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                      placeholder="Servicios a evitar explícitamente" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-300 mb-2">Propuesta de Valor (USP)</label>
+                    <textarea 
+                      value={formData.value_proposition} onChange={e => setFormData({...formData, value_proposition: e.target.value})}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition min-h-[80px]" 
+                      placeholder="Dejar vacío para inferir del sitio web" 
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 mb-2">Tono de Marca</label>
+                      <input 
+                        value={formData.brand_tone} onChange={e => setFormData({...formData, brand_tone: e.target.value})}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                        placeholder="ej. Professional" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 mb-2">Objetivo de Campaña</label>
+                      <select 
+                        value={formData.campaign_objective} onChange={e => setFormData({...formData, campaign_objective: e.target.value})}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition appearance-none"
+                      >
+                        <option>Unspecified</option>
+                        <option>Maximize Clicks</option>
+                        <option>Maximize Conversions</option>
+                        <option>Target CPA</option>
+                        <option>Target ROAS</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-300 mb-2">Presupuesto Diario</label>
+                      <input 
+                        type="number"
+                        value={formData.daily_budget} onChange={e => setFormData({...formData, daily_budget: e.target.value})}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm transition" 
+                        placeholder="Opcional" 
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Servicio / Producto Principal</label>
-                <input 
-                  value={formData.main_service} onChange={e => setFormData({...formData, main_service: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                  placeholder="Ej: Monetización de cupo en dólares de tarjetas" 
-                />
+
+              {/* Note Alert */}
+              <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl flex items-start gap-3">
+                <ShieldAlert className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <p className="text-sm text-blue-200">
+                  <strong className="text-blue-400">Nota:</strong> Puedes dejar campos vacíos. El Agency OS analizará automáticamente la URL y el nombre para inferir los parámetros estratégicos.
+                </p>
               </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Servicios Excluidos (No Promocionar)</label>
-                <input 
-                  value={formData.excluded_services} onChange={e => setFormData({...formData, excluded_services: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                  placeholder="Ej: Préstamos informales, crédito de consumo" 
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Tono de Marca y Propuestas de Valor</label>
-                <input 
-                  value={formData.brand_tone} onChange={e => setFormData({...formData, brand_tone: e.target.value})}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium" 
-                  placeholder="Ej: Pago en 10 minutos, seguro, 100% legal" 
-                />
-              </div>
+
             </div>
 
-            <button type="submit" className="mt-8 w-full py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-base flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition-all hover:scale-[1.01]">
-              <Zap className="w-5 h-5 fill-slate-950" /> Escanear Sitio Web y Descubrir SKUs
+            <button type="submit" className="mt-8 w-full md:w-auto md:ml-auto px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+              Analizar Estrategia <ChevronRight className="w-4 h-4 text-slate-950" />
             </button>
           </form>
         )}
