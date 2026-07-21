@@ -102,13 +102,29 @@ export default function Generador() {
       }
 
       if (catalog.length === 0) {
-        // Direct Gemini Fallback for Live Web / HTTPS Production
-        const prompt = `Analiza este negocio y devuelve UNICAMENTE un JSON valido con un arreglo 'catalog' de 3 a 5 servicios o productos estrella para promocionar en Google Ads.
-Negocio: ${formData.business_name || formData.website_url}
+        // Direct Gemini Deep SKU & Service Discovery
+        const prompt = `Actua como el Director de Estrategia de Google Ads para una agencia de elite mundial. 
+Analiza este negocio o URL y extrae entre 5 a 8 SKUs, productos especificos o sub-servicios de ALTA INTENCION COMERCIAL para crear una estructura de campaña completa con multiples Grupos de Anuncios (SKAG / Long-Tail).
+
+Negocio/URL: ${formData.business_name || formData.website_url}
 Servicio Principal: ${formData.main_service}
 Ubicacion: ${formData.location}
-Formato de salida (JSON puro sin markdown):
-{"catalog": [{"producto": "Nombre del servicio/producto", "rubro": "Categoria comercial"}]}`;
+Tipo de cliente: ${formData.client_type}
+
+SI ES UN NEGOCIO FINANCIERO / CUPOS / DOLARES (como dolarexpress o similar):
+Debes descomponer en SKUs especificos como:
+1. Vender Cupo Dolar Tarjeta Credito
+2. Monetizar Cupo Internacional Efectivo
+3. Transferencia Dolares Inmediata
+4. Avance Cupo Dolar RUT
+5. Cambio Dolar Efectivo Express
+6. Monetizar Cupo Linea Credito
+
+SI ES CUALQUIER OTRO RUBRO (E-commerce / Servicios):
+Descompón en 5 a 8 SKUs/servicios individuales especificos de alta demanda.
+
+Devuelve UNICAMENTE un JSON valido (sin bloques markdown ni explicaciones):
+{"catalog": [{"producto": "Nombre exacto del SKU/Servicio", "rubro": "Categoria comercial"}]}`;
 
         const gRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`, {
           method: 'POST',
@@ -125,7 +141,12 @@ Formato de salida (JSON puro sin markdown):
       }
 
       if (catalog.length === 0) {
-        catalog = [{ producto: formData.main_service || formData.business_name || "Servicio Principal", rubro: formData.business_name || "Servicios" }];
+        catalog = [
+          { producto: "Vender Cupo Dolar Tarjeta", rubro: formData.business_name || "Cupo Dolar" },
+          { producto: "Monetizar Cupo Internacional", rubro: formData.business_name || "Cupo Dolar" },
+          { producto: "Cupo Dolar Efectivo Inmediato", rubro: formData.business_name || "Cupo Dolar" },
+          { producto: "Transferencia Dolares Express", rubro: formData.business_name || "Cupo Dolar" }
+        ];
       }
 
       setDiscoveredCatalog(catalog);
@@ -186,22 +207,37 @@ Formato de salida (JSON puro sin markdown):
         for (let i = 0; i < rows.length; i++) {
           const row = rows[i];
           setProgress(i + 1);
-          setJobStatusText(`🧠 Generando anuncios y palabras clave para: ${row.producto}...`);
+          setJobStatusText(`🧠 Generando anuncios y palabras clave de élite para SKU: ${row.producto}...`);
           
-          const prompt = `Eres un experto de clase mundial en Google Ads. Genera los anuncios y palabras clave para:
-Producto: ${row.producto}
-Rubro: ${row.rubro}
-Ubicacion: ${row.ubicacion}
-URL: ${row.url_final || 'https://www.3clicads.com'}
+          const prompt = `Eres un Director de Media Buying en Google Ads con 15 años de experiencia.
+Genera una estructura de campaña completa para el SKU / Grupo de Anuncios: "${row.producto}".
 
-Devuelve UNICAMENTE un JSON estricto sin bloques de codigo markdown con este formato exacto:
+DATOS DE ENTRADA:
+- SKU / Producto: ${row.producto}
+- Rubro/Empresa: ${row.rubro}
+- Ubicación Objetivo: ${row.ubicacion}
+- URL Final: ${row.url_final || 'https://www.3clicads.com'}
+- Exclusiones del cliente: ${row.exclusiones || 'Ninguna'}
+
+REGLAS STRICTAS DE COPYWRITING & NEGATIVAS HIPER-ESPECÍFICAS:
+1. HEADLINES: Genera EXACTAMENTE 15 títulos persuasivos de menos de 30 caracteres cada uno. Deben incluir el nombre exacto del SKU, llamadas a la acción directas, garantías de confianza local ("Pago en 10 Minutos", "100% Seguro", "Atención RUT", "Sin Ocultos") y ofertas comerciales.
+2. DESCRIPTIONS: Genera EXACTAMENTE 4 descripciones persuasivas de menos de 90 caracteres cada una con propuesta de valor única y llamado a la acción.
+3. KEYWORDS: Genera entre 10 y 15 palabras clave hiper-específicas exclusivamente en concordancia Exacta ("[palabra]") y Frase ("\"palabra\""). CERO palabras en concordancia amplia.
+4. NEGATIVE KEYWORDS: Genera AL MENOS 25 PALABRAS CLAVE NEGATIVAS HIPER-ESPECÍFICAS adaptadas a este rubro concreto.
+   Incluye:
+   - Nombres de bancos/competidores irrelevantes (ej: bancoestado, santander, bci, falabella, ripley, scotiabank)
+   - Términos de estafa/duda (ej: estafa, reclamos, queja, denuncia, sernac, foro, opiniones, cmf, fijate, es verdad, ilegal)
+   - Términos informativos/no comerciales (ej: que es, como hacer, ley, pdf, gratis, youtube, calculadora, excel, plantilla, sii, impuestos, banco central, dolar hoy, dolar observador, western union)
+
+Devuelve UNICAMENTE un JSON valido sin bloques markdown ni explicaciones:
 {
-  "headlines": ["15 titulos persuasivos de menos de 30 caracteres cada uno"],
-  "descriptions": ["4 descripciones persuasivas de menos de 90 caracteres cada una"],
+  "headlines": ["Array de 15 titulos <30 caracteres"],
+  "descriptions": ["Array de 4 descripciones <90 caracteres"],
   "keywords": [
-    {"texto": "palabra clave exacta", "tipo": "Exact"},
-    {"texto": "palabra clave frase", "tipo": "Phrase"}
-  ]
+    {"texto": "palabra clave 1", "tipo": "Exact"},
+    {"texto": "palabra clave 2", "tipo": "Phrase"}
+  ],
+  "negative_keywords": ["array de al menos 25 palabras negativas hiper especificas"]
 }`;
 
           const gRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`, {
@@ -219,9 +255,20 @@ Devuelve UNICAMENTE un JSON estricto sin bloques de codigo markdown con este for
             results.push({
               row,
               rsa: {
-                headlines: [`${row.producto} Oficial`, `Servicio ${row.producto}`, "Consulta Gratis", "Atención Inmediata"],
-                descriptions: [`Contrata el mejor servicio de ${row.producto}. Atención garantizada y rápida.`],
-                keywords: [{ texto: row.producto, tipo: "Exact" }]
+                headlines: [`${row.producto} Oficial`, `Vender ${row.producto}`, "Pago Inmediato 10 Min", "100% Seguro y Legal", "Sin Cobros Ocultos", "Transferencia al Instante", "Atención WhatsApp", "Garantía de Confianza", "Mejor Precio Dólar", "Cupo Dólar Express", "Cotiza tu Cupo Hoy", "Servicio Directo Chile", "RUT Verificado", "Transacción Segura", "Atención Inmediata"],
+                descriptions: [
+                  `Vende tu ${row.producto} en Santiago de forma 100% segura y con pago en 10 minutos.`,
+                  `No arriesgues tu dinero. Procesa tu ${row.producto} con expertos. Sin cobros ocultos.`,
+                  `La mejor tasa para tu ${row.producto}. Transferencia inmediata a tu cuenta bancaria.`,
+                  `Somos la opción #1 en Chile para monetizar tu ${row.producto}. ¡Consulta gratis por WhatsApp!`
+                ],
+                keywords: [
+                  { texto: `vender ${row.producto} santiago`, tipo: "Exact" },
+                  { texto: `monetizar ${row.producto} pago inmediato`, tipo: "Exact" },
+                  { texto: `procesar ${row.producto} seguro`, tipo: "Phrase" },
+                  { texto: `transferencia ${row.producto} chile`, tipo: "Exact" }
+                ],
+                negative_keywords: ["estafa", "reclamos", "queja", "denuncia", "sernac", "foro", "opiniones", "cmf", "bancoestado", "santander", "bci", "falabella", "ripley", "scotiabank", "que es", "como hacer", "ley", "pdf", "gratis", "youtube", "calculadora", "excel", "plantilla", "sii", "impuestos"]
               }
             });
           }
