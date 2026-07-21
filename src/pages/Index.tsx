@@ -221,7 +221,14 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
-        © {new Date().getFullYear()} 3clicAds
+        <div className="space-y-2">
+          <div>
+            <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">
+              Términos y Condiciones
+            </Link>
+          </div>
+          <div>© {new Date().getFullYear()} 3clicAds</div>
+        </div>
       </footer>
     </div>
   );
