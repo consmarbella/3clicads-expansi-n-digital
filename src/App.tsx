@@ -8,6 +8,7 @@ import Generador from "./pages/Generador.tsx";
 import BulkGenerator from "./pages/BulkGenerator.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import TerminosCondiciones from "./pages/TerminosCondiciones.tsx";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad.tsx";
 import Layout from "./components/Layout.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -26,6 +27,11 @@ const App = () => (
               <Route path="/generador" element={<Generador />} />
               <Route path="/bulk" element={<BulkGenerator />} />
               <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
+              <Route path="/terminos" element={<TerminosCondiciones />} />
+              <Route path="/terms" element={<TerminosCondiciones />} />
+              <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+              <Route path="/privacy" element={<PoliticaPrivacidad />} />
+              <Route path="/privacy-policy" element={<PoliticaPrivacidad />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
