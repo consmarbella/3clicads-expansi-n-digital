@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/main.py" },
     { "source": "/guard4.html", "destination": "/guard4.html" },
     { "source": "/btc.html", "destination": "/btc.html" },
     { "source": "/(.*)", "destination": "/index.html" }

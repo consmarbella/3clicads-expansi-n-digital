@@ -34,39 +34,7 @@ export default function Generador() {
   const [isPushingApi, setIsPushingApi] = useState(false);
   const [apiPushSuccess, setApiPushSuccess] = useState(false);
 
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    
-    if (step === "PROCESSING" && jobId) {
-      interval = setInterval(async () => {
-        try {
-          const res = await fetch(`http://127.0.0.1:8000/api/bulk/status/${jobId}`);
-          if (!res.ok) return;
-          const data = await res.json();
-          
-          if (data.status === "completed") {
-            setJobResults(data.results);
-            setStep("DONE");
-          } else if (data.status === "error") {
-             toast({
-                title: "Error en procesamiento",
-                description: data.error,
-                variant: "destructive"
-             });
-             setStep("FORM");
-          } else {
-            setProgress(data.progress);
-            setTotal(data.total);
-            setJobStatusText(data.status_text || "Procesando...");
-          }
-        } catch (e) {
-          console.error("Error polling status", e);
-        }
-      }, 3000);
-    }
-    
-    return () => clearInterval(interval);
-  }, [step, jobId]);
+  // Polling removido para Vercel Serverless
 
   // Character limit validation helpers
   const cleanHeadline = (text: string) => {
@@ -94,12 +62,10 @@ export default function Generador() {
     
     setStep("DISCOVERING");
     
-    const GEMINI_KEY = "AIzaSyBuYWYikeDWoNlr8cIfd49Tw9vb1V-7woc";
-    
     try {
       let catalog = [];
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/extract-catalog', {
+        const response = await fetch('/api/extract-catalog', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -109,55 +75,7 @@ export default function Generador() {
           if (data.catalog && data.catalog.length > 0) catalog = data.catalog;
         }
       } catch (e) {
-        console.log("Local backend unavailable, using direct Gemini Deep Discovery Engine...");
-      }
-
-      if (catalog.length === 0) {
-        // Deep Multi-SKU Discovery Prompt
-        const prompt = `Eres el Director de Estrategia de Google Ads de una Agencia de Elite Mundial.
-Analiza detenidamente este negocio/sitio web y extrae entre 6 a 8 SKUs, sub-servicios o categorias comerciales hiper-especificas de ALTA INTENCION DE COMPRA para estructurar una campaña masiva de Google Ads basada en SKAG / Long-Tail.
-
-Negocio/URL: ${formData.business_name || formData.website_url}
-Servicio Principal / Rubro: ${formData.main_service || formData.business_name}
-Ubicacion: ${formData.location || 'Santiago, Chile'}
-
-REGLAS DE EXTRACTION DE SKUs:
-1. SI ES UN NEGOCIO FINANCIERO / CUPOS / DOLARES (como dolarexpress o similar):
-   Descompón obligatoriamente en 6 SKUs distintos:
-   - Vender Cupo Dolar Tarjeta Credito
-   - Monetizar Cupo Internacional Efectivo
-   - Cupo Dolar Transferencia Inmediata
-   - Avance Cupo Dolar RUT
-   - Cambio Dolar Efectivo Express
-   - Monetizar Cupo Linea Credito
-
-2. SI ES OTRO NEGOCIO (E-commerce / Servicios Locales / Legales):
-   Descompón en 6 a 8 SKUs/servicios individuales especificos de alta demanda comercial.
-
-Para cada SKU asigna:
-- producto: Nombre del SKU/Servicio
-- rubro: Categoria comercial
-- search_volume: Numero estimado de busquedas al mes (ej: "1.800/mes")
-- cpc_estimate: Estimación de CPC (ej: "$450 - $1.200 CLP")
-- competition: "Alta", "Media" o "Baja"
-
-Devuelve UNICAMENTE un JSON estricto sin markdown:
-{"catalog": [
-  {"producto": "SKU 1", "rubro": "Categoria", "search_volume": "2.400/mes", "cpc_estimate": "$600 - $1.500 CLP", "competition": "Alta"}
-]}`;
-
-        const gRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-        });
-        const gData = await gRes.json();
-        const rawText = gData.candidates?.[0]?.content?.parts?.[0]?.text || "";
-        const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          const parsed = JSON.parse(jsonMatch[0]);
-          catalog = parsed.catalog || [];
-        }
+        console.error("Local backend unavailable");
       }
 
       if (catalog.length === 0) {
@@ -170,6 +88,7 @@ Devuelve UNICAMENTE un JSON estricto sin markdown:
           { producto: "Monetizar Cupo Linea Credito", rubro: "Finanzas Express", search_volume: "950/mes", cpc_estimate: "$350 - $1.100 CLP", competition: "Baja" }
         ];
       }
+
 
       setDiscoveredCatalog(catalog);
       setSelectedIndexes(new Set(catalog.map((_: any, i: number) => i)));
@@ -204,7 +123,7 @@ Devuelve UNICAMENTE un JSON estricto sin markdown:
     }));
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/generate-campaign', {
+      const response = await fetch('/api/generate-campaign', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -217,9 +136,14 @@ Devuelve UNICAMENTE un JSON estricto sin markdown:
       if (!response.ok) throw new Error("Error conectando al backend de Python");
       
       const data = await response.json();
-      setJobId(data.job_id);
+      if (data.status === "completed") {
+        setJobResults(data.results);
+        setStep("DONE");
+      } else {
+        throw new Error(data.error || "Error procesando campaña");
+      }
     } catch (err: any) {
-      toast({ title: "Error de Servidor", description: "El backend de Python no está en ejecución. Debes iniciarlo.", variant: "destructive" });
+      toast({ title: "Error de Servidor", description: "El backend de Vercel falló por Timeout o error interno.", variant: "destructive" });
       setStep("REVIEW");
     }
   };

@@ -7,7 +7,6 @@ from typing import Dict, Any, TypedDict
 from models import AgentState, RSA, ValidationFeedback
 
 # Setup Gemini Model (using the fast 1.5 Flash for generation and auditing)
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBuYWYikeDWoNlr8cIfd49Tw9vb1V-7woc"
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
 llm_structured_rsa = llm.with_structured_output(RSA)
 llm_structured_val = llm.with_structured_output(ValidationFeedback)
