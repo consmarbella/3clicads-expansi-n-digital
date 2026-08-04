@@ -5,10 +5,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   
   const menu = [
-    { name: "Dashboard", icon: LayoutDashboard, path: "/" },
+    { name: "Dashboard", icon: LayoutDashboard, path: "/dashboard" },
     { name: "Generador Single", icon: FilePlus2, path: "/generador" },
     { name: "Bulk E-Commerce", icon: Layers, path: "/bulk" },
   ];
+
+  const isPublicRoute = 
+    location.pathname === "/" ||
+    location.pathname.startsWith("/terminos") ||
+    location.pathname.startsWith("/terms") ||
+    location.pathname.startsWith("/politica") ||
+    location.pathname.startsWith("/privacy");
+
+  if (isPublicRoute) {
+    return <div className="min-h-screen bg-slate-950 font-sans">{children}</div>;
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 flex font-sans">

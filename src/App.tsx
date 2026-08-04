@@ -7,6 +7,7 @@ import Auditoria from "./pages/Auditoria.tsx";
 import Generador from "./pages/Generador.tsx";
 import BulkGenerator from "./pages/BulkGenerator.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
+import Index from "./pages/Index.tsx";
 import TerminosCondiciones from "./pages/TerminosCondiciones.tsx";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad.tsx";
 import Layout from "./components/Layout.tsx";
@@ -22,7 +23,8 @@ const App = () => (
       <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/auditoria" element={<Auditoria />} />
               <Route path="/generador" element={<Generador />} />
               <Route path="/bulk" element={<BulkGenerator />} />
