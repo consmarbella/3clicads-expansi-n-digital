@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, BookOpen, Search, UserPlus, ArrowRight, ChevronRight } from "lucide-react";
+import { CheckCircle, Zap, BookOpen, Search, UserPlus, ArrowRight, ChevronRight, Globe, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -113,7 +113,7 @@ const Index = () => {
           <br />
           <span className="text-primary">cobran miles.</span>
           <br />
-          En segundos.
+          A tu medida.
         </motion.h1>
 
         <motion.p
@@ -148,6 +148,104 @@ const Index = () => {
             🔑 Entrar con ID de Orden
           </a>
         </motion.div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-3 mb-12"
+        >
+          <div className="w-px h-8 bg-primary/50" />
+          <span className="text-sm font-mono text-muted-foreground tracking-wider uppercase">
+            Nuestros Pilares de Crecimiento
+          </span>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Card 1: Programmatic SEO */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="group relative bg-card/40 backdrop-blur-md border border-border/80 hover:border-primary/50 rounded-2xl p-8 md:p-12 hover:shadow-[0_0_50px_-12px_rgba(var(--primary),0.15)] transition-all overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-primary/10 transition-colors" />
+            <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <Globe className="w-7 h-7 text-primary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+              Programmatic SEO (PSEO)
+            </h3>
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
+              Domina Google escalando miles de páginas con intención de búsqueda específica de forma automatizada. Captura tráfico masivo y altamente calificado en tu nicho sin pagar por cada clic.
+            </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Generación masiva de páginas de aterrizaje optimizadas</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Estructuras semánticas perfectas para buscadores</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Estrategia de palabras clave de cola larga (Long-tail)</span>
+              </li>
+            </ul>
+            <a
+              href="mailto:contacto@3clicads.com?subject=Consulta sobre Programmatic SEO"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform"
+            >
+              Descubrir PSEO <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
+
+          {/* Card 2: Custom Google Ads Campaigns */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="group relative bg-card/40 backdrop-blur-md border border-border/80 hover:border-primary/50 rounded-2xl p-8 md:p-12 hover:shadow-[0_0_50px_-12px_rgba(var(--primary),0.15)] transition-all overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary/5 rounded-full blur-[50px] pointer-events-none group-hover:bg-primary/10 transition-colors" />
+            <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <Target className="w-7 h-7 text-primary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+              Campañas de Google Ads Personalizadas
+            </h3>
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
+              Diseño, estructura y optimización de campañas de búsqueda a la medida de tu negocio. Maximizamos el Retorno de Inversión (ROI) apuntando a audiencias de alta intención de compra.
+            </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Estructura profesional certificada por Google Ads</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Copywriting persuasivo enfocado en la conversión</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>Monitoreo de conversiones y optimización continua</span>
+              </li>
+            </ul>
+            <a
+              href="mailto:contacto@3clicads.com?subject=Consulta sobre Campañas Personalizadas de Google Ads"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform"
+            >
+              Ver Soluciones de Ads <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
+        </div>
       </section>
 
       {/* Services */}
