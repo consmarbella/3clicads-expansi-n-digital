@@ -48,12 +48,12 @@ const TerminosCondiciones = () => {
             <section className="pb-6 border-b border-border">
               <p className="text-base text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">3ClicAds</strong> es el nombre comercial utilizado por{' '}
-                <strong className="text-foreground">CONSULTORIAS EMPRESARIALES ALEJANDRO MATTEUCCI E.I.R.L.</strong>, RUT 76.891.976-3,
-                con domicilio en Vitacura 7181, Santiago, Chile.
+                <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, NIT 700228703-9,
+                con domicilio en CR 26 71 B 30, Bogotá D.C., Colombia.
               </p>
               <div className="mt-4 space-y-1 text-sm text-muted-foreground">
                 <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a></p>
-                <p>Teléfono: +56 9 6765 8939</p>
+                <p>Teléfono: +57 3185066937</p>
               </div>
             </section>
 
@@ -219,7 +219,7 @@ const TerminosCondiciones = () => {
                 <li>Fraude o suplantación de identidad</li>
                 <li>Difusión de contenido ilegal</li>
                 <li>Vulneración de derechos de terceros</li>
-                <li>Actividades contrarias a la legislación chilena o internacional aplicable</li>
+                <li>Actividades contrarias a la legislación colombiana o internacional aplicable</li>
               </ul>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 3ClicAds podrá suspender o rechazar servicios cuando existan indicios razonables de uso indebido.
@@ -275,11 +275,11 @@ const TerminosCondiciones = () => {
                 13. Ley aplicable y jurisdicción
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Los presentes Términos y Condiciones se regirán por las leyes de la República de Chile.
+                Los presentes Términos y Condiciones se regirán por las leyes de la República de Colombia.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 Cualquier controversia derivada de la interpretación o ejecución de estos términos será sometida a los
-                tribunales competentes de Chile.
+                tribunales competentes de Bogotá D.C., Colombia.
               </p>
             </section>
 
@@ -290,15 +290,15 @@ const TerminosCondiciones = () => {
               </h2>
               <div className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <p className="text-base font-semibold text-foreground">
-                  CONSULTORIAS EMPRESARIALES ALEJANDRO MATTEUCCI E.I.R.L.
+                  Alejandro Andrés Matteucci Pizarro
                 </p>
                 <p className="text-sm text-muted-foreground">Nombre comercial: 3ClicAds</p>
-                <p className="text-sm text-muted-foreground">RUT: 76.891.976-3</p>
+                <p className="text-sm text-muted-foreground">NIT: 700228703-9</p>
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +56 9 6765 8939</p>
-                <p className="text-sm text-muted-foreground">Dirección: Vitacura 7181, Santiago, Chile</p>
+                <p className="text-sm text-muted-foreground">Teléfono: +57 3185066937</p>
+                <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
               </div>
             </section>
           </div>
