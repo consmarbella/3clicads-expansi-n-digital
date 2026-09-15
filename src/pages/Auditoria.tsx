@@ -697,7 +697,12 @@ const Auditoria = () => {
           <div>
             Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
           </div>
-          <div className="mt-4">3clicAds — Santiago, Chile</div>
+          <div className="flex items-center justify-center gap-4 mt-4">
+            <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">Términos y Condiciones</Link>
+            <span className="text-border">|</span>
+            <Link to="/politica-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</Link>
+          </div>
+          <div className="mt-2">© {new Date().getFullYear()} 3clicAds — Bogotá D.C., Colombia</div>
         </div>
       </footer>
 
