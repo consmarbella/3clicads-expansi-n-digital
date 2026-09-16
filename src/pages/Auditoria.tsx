@@ -15,8 +15,6 @@ import {
 } from "lucide-react";
 import MiniGauge from "@/components/audit/MiniGauge";
 
-const PAY_URL = "https://mpago.la/1nHw9UL";
-
 const errors = [
   {
     severity: "critical",
@@ -653,44 +651,6 @@ const Auditoria = () => {
         </div>
       </section>
 
-      {/* Precio y CTA */}
-      <section className="relative z-10 max-w-3xl mx-auto px-6 pb-32">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="border border-border rounded-2xl p-12 md:p-16 text-center bg-card relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
-
-          <div className="relative">
-            <div
-              className="text-5xl md:text-7xl font-bold text-foreground tracking-tight mb-4"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              $35.000 <span className="text-2xl md:text-3xl text-muted-foreground">COP</span>
-            </div>
-            <p className="text-base md:text-lg text-muted-foreground mb-2">
-              Menos que un almuerzo. Más que lo que cobra cualquier agencia.
-            </p>
-            <p className="text-sm text-muted-foreground/70 mb-10">
-              Sin compromiso. Sin contratos. Solo la verdad sobre tu sitio.
-            </p>
-
-            <a
-              href={PAY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-base px-10 py-5 rounded-lg hover:brightness-110 transition-all shadow-[0_0_40px_-8px_hsl(150_100%_50%/0.5)]"
-            >
-              Quiero la auditoría de mi sitio
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Footer */}
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
         <div className="space-y-2">
@@ -706,23 +666,6 @@ const Auditoria = () => {
         </div>
       </footer>
 
-      {/* Sticky bottom banner */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t-2 border-primary shadow-[0_-4px_20px_-5px_hsl(150_100%_50%/0.3)]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs md:text-sm text-muted-foreground text-center sm:text-left">
-            Esta es una auditoría de ejemplo.
-          </p>
-          <a
-            href={PAY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold text-xs md:text-sm px-5 py-2.5 rounded-md hover:brightness-110 transition-all shadow-[0_0_20px_-5px_hsl(150_100%_50%/0.5)]"
-          >
-            Pedir mi auditoría — $35.000 COP
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
-      </div>
     </div>
   );
 };
