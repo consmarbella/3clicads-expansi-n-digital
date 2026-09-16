@@ -474,7 +474,7 @@ const Auditoria = () => {
             className="text-2xl md:text-3xl font-bold text-foreground tracking-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Auditoría SEO completa · sitio-ejemplo.cl
+            Auditoría SEO completa · sitio-ejemplo.co
           </h2>
           <p className="text-sm text-muted-foreground font-mono">
             Generada el 19 de abril 2026
