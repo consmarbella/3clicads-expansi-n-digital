@@ -669,7 +669,7 @@ const Auditoria = () => {
               className="text-5xl md:text-7xl font-bold text-foreground tracking-tight mb-4"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              $35.000 <span className="text-2xl md:text-3xl text-muted-foreground">CLP</span>
+              $35.000 <span className="text-2xl md:text-3xl text-muted-foreground">COP</span>
             </div>
             <p className="text-base md:text-lg text-muted-foreground mb-2">
               Menos que un almuerzo. Más que lo que cobra cualquier agencia.
@@ -718,7 +718,7 @@ const Auditoria = () => {
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold text-xs md:text-sm px-5 py-2.5 rounded-md hover:brightness-110 transition-all shadow-[0_0_20px_-5px_hsl(150_100%_50%/0.5)]"
           >
-            Pedir mi auditoría — $35.000 CLP
+            Pedir mi auditoría — $35.000 COP
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
