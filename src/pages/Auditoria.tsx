@@ -695,7 +695,7 @@ const Auditoria = () => {
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
         <div className="space-y-2">
           <div>
-            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a> | <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">cupodolar24@gmail.com</a>
           </div>
           <div className="flex items-center justify-center gap-4 mt-4">
             <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">Términos y Condiciones</Link>

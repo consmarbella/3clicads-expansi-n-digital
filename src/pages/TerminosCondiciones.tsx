@@ -52,7 +52,7 @@ const TerminosCondiciones = () => {
                 con domicilio en CR 26 71 B 30, Bogotá D.C., Colombia.
               </p>
               <div className="mt-4 space-y-1 text-sm text-muted-foreground">
-                <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a></p>
+                <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> / <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:underline">cupodolar24@gmail.com</a></p>
                 <p>Teléfono: +57 3001234567</p>
               </div>
             </section>
@@ -295,7 +295,7 @@ const TerminosCondiciones = () => {
                 <p className="text-sm text-muted-foreground">Nombre comercial: 3ClicAds</p>
                 <p className="text-sm text-muted-foreground">NIT: 700228703-9</p>
                 <p className="text-sm text-muted-foreground">
-                  Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
+                  Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> / <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:underline">cupodolar24@gmail.com</a>
                 </p>
                 <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
                 <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
@@ -309,7 +309,7 @@ const TerminosCondiciones = () => {
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
         <div className="space-y-2">
           <div>
-            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a> | <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">cupodolar24@gmail.com</a>
           </div>
           <div className="flex items-center justify-center gap-4 mt-4">
             <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">Términos y Condiciones</Link>

@@ -58,7 +58,8 @@ const PoliticaPrivacidad = () => {
                 <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, operando bajo el nombre comercial{' '}
                 <strong className="text-foreground">3ClicAds</strong>, con NIT 700228703-9, domicilio en CR 26 71 B 30, Bogotá
                 D.C., Colombia, correo electrónico{' '}
-                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> y
+                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>,{' '}
+                <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:underline">cupodolar24@gmail.com</a> y
                 teléfono +57 3001234567, es el responsable del tratamiento de los datos personales recopilados a través del
                 sitio web 3clicads.com y durante la prestación de sus servicios.
               </p>
@@ -134,7 +135,8 @@ const PoliticaPrivacidad = () => {
               <p className="text-base text-muted-foreground leading-relaxed">
                 Para ejercer cualquiera de los derechos de acceso, rectificación, actualización o supresión de datos, el
                 titular podrá enviar una solicitud por escrito al correo electrónico{' '}
-                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> o
+                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>,{' '}
+                <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:underline">cupodolar24@gmail.com</a> o
                 a la dirección física CR 26 71 B 30, Bogotá D.C., Colombia.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -191,7 +193,7 @@ const PoliticaPrivacidad = () => {
                 </p>
                 <p className="text-sm text-muted-foreground">NIT: 700228703-9</p>
                 <p className="text-sm text-muted-foreground">
-                  Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
+                  Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> / <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:underline">cupodolar24@gmail.com</a>
                 </p>
                 <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
                 <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
@@ -205,7 +207,7 @@ const PoliticaPrivacidad = () => {
       <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
         <div className="space-y-2">
           <div>
-            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a> | <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">cupodolar24@gmail.com</a>
           </div>
           <div className="flex items-center justify-center gap-4 mt-4">
             <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">Términos y Condiciones</Link>
