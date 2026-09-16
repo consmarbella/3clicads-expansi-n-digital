@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     icon: CheckCircle,
-    title: "Espía de Competencia con IA",
+    title: "Inteligencia de Mercado & Benchmark",
     description: "Analizamos las keywords de tus competidores y creamos anuncios que los superan. Automáticamente.",
     num: "01",
   },
