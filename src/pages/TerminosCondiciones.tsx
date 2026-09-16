@@ -53,7 +53,7 @@ const TerminosCondiciones = () => {
               </p>
               <div className="mt-4 space-y-1 text-sm text-muted-foreground">
                 <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a></p>
-                <p>Teléfono: +57 3185066937</p>
+                <p>Teléfono: +57 3001234567</p>
               </div>
             </section>
 
@@ -297,7 +297,7 @@ const TerminosCondiciones = () => {
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +57 3185066937</p>
+                <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
                 <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
               </div>
             </section>

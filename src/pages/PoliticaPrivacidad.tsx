@@ -59,7 +59,7 @@ const PoliticaPrivacidad = () => {
                 <strong className="text-foreground">3ClicAds</strong>, con NIT 700228703-9, domicilio en CR 26 71 B 30, Bogotá
                 D.C., Colombia, correo electrónico{' '}
                 <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> y
-                teléfono +57 3185066937, es el responsable del tratamiento de los datos personales recopilados a través del
+                teléfono +57 3001234567, es el responsable del tratamiento de los datos personales recopilados a través del
                 sitio web 3clicads.com y durante la prestación de sus servicios.
               </p>
             </section>
@@ -193,7 +193,7 @@ const PoliticaPrivacidad = () => {
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +57 3185066937</p>
+                <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
                 <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
               </div>
             </section>
