@@ -324,17 +324,18 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-border py-8 text-center text-xs text-muted-foreground font-mono">
-        <div className="space-y-2">
+      <footer className="relative z-10 border-t border-border py-16 md:py-20 text-center text-muted-foreground">
+        <div className="space-y-6">
           <div>
-            Contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors font-semibold text-sm">contacto@3clicads.com</a>
+            <p className="text-lg md:text-xl font-semibold text-foreground mb-1">Contacto</p>
+            <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors text-base md:text-lg font-medium">contacto@3clicads.com</a>
           </div>
-          <div className="flex items-center justify-center gap-4 mt-4">
-            <Link to="/terminos-condiciones" className="hover:text-foreground transition-colors">Términos y Condiciones</Link>
-            <span className="text-border">|</span>
-            <Link to="/politica-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</Link>
+          <div className="flex items-center justify-center gap-6 mt-6">
+            <Link to="/terminos-condiciones" className="text-sm md:text-base font-medium hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Términos y Condiciones</Link>
+            <span className="text-border text-lg">|</span>
+            <Link to="/politica-privacidad" className="text-sm md:text-base font-medium hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Política de Privacidad</Link>
           </div>
-          <div className="mt-2">© {new Date().getFullYear()} 3clicAds</div>
+          <div className="mt-6 text-sm text-muted-foreground">© {new Date().getFullYear()} 3clicAds</div>
         </div>
       </footer>
     </div>
