@@ -119,7 +119,16 @@ const Index = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="text-base md:text-lg text-primary font-medium max-w-2xl leading-relaxed mb-6"
+        >
+          Líderes en desarrollo de software, SEO y posicionamiento orgánico para empresas en Colombia y Latam.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
           className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed mb-12"
         >
           Keywords exactas, copy de alto rendimiento y estrategia del top 1%.
