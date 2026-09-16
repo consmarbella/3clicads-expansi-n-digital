@@ -329,8 +329,6 @@ const Index = () => {
           <div>
             <p className="text-lg md:text-xl font-semibold text-foreground mb-1">Contacto</p>
             <a href="mailto:contacto@3clicads.com" className="text-primary hover:text-foreground transition-colors text-base md:text-lg font-medium">contacto@3clicads.com</a>
-            <span className="text-border mx-2">|</span>
-            <a href="mailto:cupodolar24@gmail.com" className="text-primary hover:text-foreground transition-colors text-base md:text-lg font-medium">cupodolar24@gmail.com</a>
           </div>
           <div className="flex items-center justify-center gap-6 mt-6">
             <Link to="/terminos-condiciones" className="text-sm md:text-base font-medium hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Términos y Condiciones</Link>
