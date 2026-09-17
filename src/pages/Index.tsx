@@ -298,12 +298,10 @@ const Index = () => {
             Pago único. Sin suscripciones. Archivos listos para importar.
           </p>
           <a
-            href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:contacto@3clicads.com?subject=Cotización de Software"
             className="relative group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-10 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_40px_-8px_hsl(150_100%_50%/0.4)]"
           >
-            Comprar Software (Pago Único)
+            Cotizar Software (Pago Único)
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
