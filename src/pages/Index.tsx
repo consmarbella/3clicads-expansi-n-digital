@@ -6,37 +6,37 @@ const services = [
   {
     icon: CheckCircle,
     title: "Inteligencia de Mercado & Benchmark",
-    description: "Analizamos las keywords de tus competidores y creamos anuncios que los superan. Automáticamente.",
+    description: "Análisis de keywords competitivas y generación de anuncios superiores. Automáticamente.",
     num: "01",
   },
   {
     icon: Zap,
     title: "Copywriting Instantáneo",
-    description: "15 títulos y 4 descripciones por grupo de anuncios, optimizados para clics que convierten.",
+    description: "15 títulos y 4 descripciones por grupo de anuncios, listos para exportar.",
     num: "02",
   },
   {
     icon: BookOpen,
-    title: "Guía Paso a Paso",
-    description: "Checklist sencillo para copiar, pegar y lanzar. Aunque nunca hayas tocado Google Ads.",
+    title: "Documentación Técnica",
+    description: "Checklist y guía paso a paso para importar los archivos en Google Ads Editor.",
     num: "03",
   },
   {
     icon: Search,
     title: "Campañas PSEO",
-    description: "Posicionamos cientos de páginas automáticamente para dominar los resultados de búsqueda.",
+    description: "Generación masiva de páginas optimizadas con Sitemaps XML para indexación.",
     num: "04",
   },
   {
     icon: UserPlus,
-    title: "Cuentas Profesionales Google Ads",
-    description: "Configuramos tu cuenta con estructura, conversiones y seguimiento listos para escalar.",
+    title: "Estructura Google Ads",
+    description: "CSV con estructura profesional, conversiones y seguimiento listos para importar.",
     num: "05",
   },
   {
     icon: Search,
-    title: "Programmatic SEO a Medida",
-    description: "Desarrollamos e implementamos estrategias de Programmatic SEO a medida para dominar los resultados de búsqueda en tu nicho.",
+    title: "Arquitectura PSEO a Medida",
+    description: "Despliegue de arquitectura web estática, Sitemaps XML y páginas listas para indexar.",
     num: "06",
   },
 ];
@@ -98,7 +98,7 @@ const Index = () => {
         >
           <span className="inline-flex items-center gap-2 text-xs font-mono font-medium tracking-wider uppercase text-primary border border-primary/30 bg-primary/5 px-4 py-1.5 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Plataforma de IA para Ads
+            Software para SEO y Ads
           </span>
         </motion.div>
 
@@ -109,11 +109,11 @@ const Index = () => {
           className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-foreground mb-8 max-w-4xl"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          Campañas que las agencias
+          Software de automatización para
           <br />
-          <span className="text-primary">cobran miles.</span>
+          <span className="text-primary">Programmatic SEO</span>
           <br />
-          A tu medida.
+          y Google Ads.
         </motion.h1>
 
         <motion.p
@@ -122,7 +122,8 @@ const Index = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="text-base md:text-lg text-primary font-medium max-w-2xl leading-relaxed mb-6"
         >
-          Líderes en desarrollo de software, SEO y posicionamiento orgánico para empresas en Colombia y Latam.
+          Generación de arquitectura web, sitemaps XML y estructuración de campañas.
+          Entregables exportados en formato CSV, listos para importación directa.
         </motion.p>
 
         <motion.p
@@ -131,32 +132,8 @@ const Index = () => {
           transition={{ duration: 0.5, delay: 0.45 }}
           className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed mb-12"
         >
-          Keywords exactas, copy de alto rendimiento y ejecución de primer nivel.
-          Genera, lanza y escala sin intermediarios.
+          Líderes en desarrollo de software, SEO y posicionamiento orgánico para empresas en Colombia y Latam.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
-          className="flex flex-col sm:flex-row gap-3"
-        >
-          <a
-            href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_hsl(150_100%_50%/0.3)]"
-          >
-            Obtener Archivos de Campaña
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 border border-border text-muted-foreground font-medium text-sm px-8 py-4 rounded-lg hover:bg-secondary hover:text-foreground transition-colors"
-          >
-            Comprar Paquete de Despliegue (Pago Único)
-          </a>
-        </motion.div>
       </section>
 
       {/* Solutions Section */}
@@ -196,11 +173,11 @@ const Index = () => {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Generación masiva de páginas de aterrizaje optimizadas</span>
+                <span>Generación estática de páginas de aterrizaje</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Estructuras semánticas perfectas para buscadores</span>
+                <span>Sitemaps XML listos para Google Search Console</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -208,10 +185,10 @@ const Index = () => {
               </li>
             </ul>
             <a
-              href="mailto:contacto@3clicads.com?subject=Consulta sobre Programmatic SEO"
+              href="mailto:contacto@3clicads.com?subject=Consulta sobre Arquitectura PSEO"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform"
             >
-              Descubrir PSEO <ArrowRight className="w-4 h-4" />
+              Descargar Archivos PSEO <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
 
@@ -236,22 +213,22 @@ const Index = () => {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Estructura profesional certificada por Google Ads</span>
+                <span>Estructura profesional de campañas en Google Ads</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Copywriting persuasivo enfocado en la conversión</span>
+                <span>Copy optimizado para clics, listo para exportar</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Monitoreo de conversiones y optimización continua</span>
+                <span>CSV compatible con Google Ads Editor</span>
               </li>
             </ul>
             <a
-              href="mailto:contacto@3clicads.com?subject=Consulta sobre Campañas Personalizadas de Google Ads"
+              href="mailto:contacto@3clicads.com?subject=Consulta sobre Infraestructura de Ads"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:translate-x-1 transition-transform"
             >
-              Ver Soluciones de Ads <ArrowRight className="w-4 h-4" />
+              Descargar Archivos Ads <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
         </div>
@@ -315,7 +292,7 @@ const Index = () => {
             className="relative text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            ¿Listo para escalar?
+            Descargar Archivos CSV
           </h2>
           <p className="relative text-muted-foreground text-base mb-10 max-w-md mx-auto">
             Pago único. Sin suscripciones. Archivos listos para importar.
@@ -326,7 +303,7 @@ const Index = () => {
             rel="noopener noreferrer"
             className="relative group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-10 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_40px_-8px_hsl(150_100%_50%/0.4)]"
           >
-            Comprar Ahora
+            Comprar Software (Pago Único)
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
