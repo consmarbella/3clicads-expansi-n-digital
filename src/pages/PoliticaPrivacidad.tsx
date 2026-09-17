@@ -101,7 +101,7 @@ const PoliticaPrivacidad = () => {
                 Los datos personales recolectados serán utilizados exclusivamente para las siguientes finalidades:
               </p>
               <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground ml-4">
-                <li>Prestación, ejecución y administración de los servicios contratados de marketing digital, SEO programático y analítica.</li>
+                <li>Prestación, ejecución y administración de los servicios contratados de software de automatización, SEO programático y entregables digitales.</li>
                 <li>Procesamiento de pagos, facturación y gestión de cobro.</li>
                 <li>Verificación de identidad, prevención de fraude y cumplimiento de procesos de auditoría KYC/KYB requeridos por procesadores de pago y autoridades.</li>
                 <li>Envío de comunicaciones comerciales, cotizaciones, soporte técnico y actualizaciones de los servicios.</li>

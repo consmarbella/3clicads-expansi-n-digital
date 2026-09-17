@@ -78,18 +78,18 @@ const TerminosCondiciones = () => {
                 2. Descripción de los servicios
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-3">
-                3ClicAds presta servicios profesionales relacionados con marketing digital, incluyendo:
+                3ClicAds provee licencias de software de automatización, arquitecturas web estáticas y entregables digitales en formato CSV/XML para Programmatic SEO y campañas publicitarias, incluyendo:
               </p>
               <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground ml-4">
-                <li>SEO programático</li>
-                <li>Posicionamiento orgánico en motores de búsqueda</li>
-                <li>Gestión y optimización de campañas publicitarias digitales</li>
-                <li>Consultoría estratégica de marketing digital</li>
-                <li>Análisis y optimización de presencia digital</li>
-                <li>Otros servicios relacionados con marketing digital que sean acordados con el cliente</li>
+                <li>Generación de arquitectura web estática y Sitemaps XML</li>
+                <li>Entregables en formato CSV para importación en Google Ads Editor</li>
+                <li>Automatización de estructuras de campañas publicitarias</li>
+                <li>Archivos de Copywriting para anuncios digitales</li>
+                <li>Documentación técnica y guías de implementación</li>
+                <li>Otros entregables digitales acordados con el cliente</li>
               </ul>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
-                Los servicios son prestados de manera personalizada de acuerdo con los requerimientos específicos de cada cliente.
+                Los entregables son generados de forma automatizada y proporcionados en formatos estándar para su uso directo por parte del cliente.
               </p>
             </section>
 
