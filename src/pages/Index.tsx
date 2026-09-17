@@ -131,7 +131,7 @@ const Index = () => {
           transition={{ duration: 0.5, delay: 0.45 }}
           className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed mb-12"
         >
-          Keywords exactas, copy de alto rendimiento y estrategia del top 1%.
+          Keywords exactas, copy de alto rendimiento y ejecución de primer nivel.
           Genera, lanza y escala sin intermediarios.
         </motion.p>
 
@@ -147,14 +147,14 @@ const Index = () => {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-8 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_30px_-5px_hsl(150_100%_50%/0.3)]"
           >
-            Obtener Acceso 15 Días
+            Obtener Archivos de Campaña
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#"
             className="inline-flex items-center gap-2 border border-border text-muted-foreground font-medium text-sm px-8 py-4 rounded-lg hover:bg-secondary hover:text-foreground transition-colors"
           >
-            🔑 Entrar con ID de Orden
+            Comprar Paquete de Despliegue (Pago Único)
           </a>
         </motion.div>
       </section>
@@ -188,10 +188,10 @@ const Index = () => {
               <Globe className="w-7 h-7 text-primary" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              Programmatic SEO (PSEO)
+              Despliegue de Arquitectura PSEO
             </h3>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
-              Domina Google escalando miles de páginas con intención de búsqueda específica de forma automatizada. Captura tráfico masivo y altamente calificado en tu nicho sin pagar por cada clic.
+              Generación estática de páginas y Sitemaps XML listos para indexar.
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -204,7 +204,7 @@ const Index = () => {
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                <span>Estrategia de palabras clave de cola larga (Long-tail)</span>
+                <span>Palabras clave de cola larga (Long-tail)</span>
               </li>
             </ul>
             <a
@@ -228,10 +228,10 @@ const Index = () => {
               <Target className="w-7 h-7 text-primary" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              Campañas de Google Ads Personalizadas
+              Configuración de Infraestructura de Ads
             </h3>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6">
-              Diseño, estructura y optimización de campañas de búsqueda a la medida de tu negocio. Maximizamos el Retorno de Inversión (ROI) apuntando a audiencias de alta intención de compra.
+              Entregable en CSV listo para Google Ads Editor.
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -318,7 +318,7 @@ const Index = () => {
             ¿Listo para escalar?
           </h2>
           <p className="relative text-muted-foreground text-base mb-10 max-w-md mx-auto">
-            Acceso completo a todas las herramientas por 15 días.
+            Pago único. Sin suscripciones. Archivos listos para importar.
           </p>
           <a
             href="https://3clicads.gumroad.com/l/xmhch?wanted=true"
@@ -326,7 +326,7 @@ const Index = () => {
             rel="noopener noreferrer"
             className="relative group inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-10 py-4 rounded-lg hover:brightness-110 transition-all shadow-[0_0_40px_-8px_hsl(150_100%_50%/0.4)]"
           >
-            Comenzar Ahora
+            Comprar Ahora
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
