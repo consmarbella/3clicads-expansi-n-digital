@@ -49,11 +49,11 @@ const TerminosCondiciones = () => {
               <p className="text-base text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">3ClicAds</strong> es el nombre comercial utilizado por{' '}
                 <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, NIT 700228703-9,
-                con domicilio en CR 26 71 B 30, Bogotá D.C., Colombia.
+                con domicilio en Vitacura 7181, Santiago, Chile.
               </p>
               <div className="mt-4 space-y-1 text-sm text-muted-foreground">
                 <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a></p>
-                <p>Teléfono: +57 3001234567</p>
+                <p>Teléfono: +56 9 6765 8939</p>
               </div>
             </section>
 
@@ -279,7 +279,7 @@ const TerminosCondiciones = () => {
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 Cualquier controversia derivada de la interpretación o ejecución de estos términos será sometida a los
-                tribunales competentes de Bogotá D.C., Colombia.
+                tribunales competentes de Santiago, Chile.
               </p>
             </section>
 
@@ -297,8 +297,8 @@ const TerminosCondiciones = () => {
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
-                <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
+                <p className="text-sm text-muted-foreground">Teléfono: +56 9 6765 8939</p>
+                <p className="text-sm text-muted-foreground">Dirección: Vitacura 7181, Santiago, Chile</p>
               </div>
             </section>
           </div>

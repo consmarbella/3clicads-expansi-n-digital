@@ -56,10 +56,10 @@ const PoliticaPrivacidad = () => {
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, operando bajo el nombre comercial{' '}
-                <strong className="text-foreground">3ClicAds</strong>, con NIT 700228703-9, domicilio en CR 26 71 B 30, Bogotá
-                D.C., Colombia, correo electrónico{' '}
+                <strong className="text-foreground">3ClicAds</strong>, con NIT 700228703-9, domicilio en Vitacura 7181, Santiago, Chile,
+                correo electrónico{' '}
                 <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> y
-                teléfono +57 3001234567, es el responsable del tratamiento de los datos personales recopilados a través del
+                teléfono +56 9 6765 8939, es el responsable del tratamiento de los datos personales recopilados a través del
                 sitio web 3clicads.com y durante la prestación de sus servicios.
               </p>
             </section>
@@ -135,7 +135,7 @@ const PoliticaPrivacidad = () => {
                 Para ejercer cualquiera de los derechos de acceso, rectificación, actualización o supresión de datos, el
                 titular podrá enviar una solicitud por escrito al correo electrónico{' '}
                 <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> o
-                a la dirección física CR 26 71 B 30, Bogotá D.C., Colombia.
+                a la dirección física Vitacura 7181, Santiago, Chile.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 La solicitud deberá contener: nombre del titular, descripción clara de la petición, datos de contacto para
@@ -193,8 +193,8 @@ const PoliticaPrivacidad = () => {
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +57 3001234567</p>
-                <p className="text-sm text-muted-foreground">Dirección: CR 26 71 B 30, Bogotá D.C., Colombia</p>
+                <p className="text-sm text-muted-foreground">Teléfono: +56 9 6765 8939</p>
+                <p className="text-sm text-muted-foreground">Dirección: Vitacura 7181, Santiago, Chile</p>
               </div>
             </section>
           </div>
