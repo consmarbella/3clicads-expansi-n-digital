@@ -69,7 +69,7 @@ const Index = () => {
             <Zap className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
-            3clicAds
+            RAGUSA LTD
           </span>
         </div>
         <div className="flex items-center gap-6">
@@ -319,7 +319,7 @@ const Index = () => {
             <span className="text-border text-lg">|</span>
             <Link to="/politica-privacidad" className="text-sm md:text-base font-medium hover:text-foreground transition-colors underline underline-offset-4 decoration-border hover:decoration-foreground">Política de Privacidad</Link>
           </div>
-          <div className="mt-6 text-sm text-muted-foreground">© {new Date().getFullYear()} 3clicAds</div>
+          <div className="mt-6 text-sm text-muted-foreground">© {new Date().getFullYear()} RAGUSA LTD</div>
         </div>
       </footer>
     </div>

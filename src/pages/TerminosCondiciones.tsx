@@ -17,7 +17,7 @@ const TerminosCondiciones = () => {
             <Zap className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
-            3clicAds
+            RAGUSA LTD
           </span>
         </Link>
         <Link
@@ -47,13 +47,10 @@ const TerminosCondiciones = () => {
             {/* Empresa */}
             <section className="pb-6 border-b border-border">
               <p className="text-base text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">3ClicAds</strong> es el nombre comercial utilizado por{' '}
-                <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, NIT 700228703-9,
-                con domicilio en Vitacura 7181, Santiago, Chile.
+                <strong className="text-foreground">RAGUSA LTD</strong>, Private Limited Company (Ltd), con Número de Compañía (CRN) 17561301, constituida el 4 de noviembre de 2026, con domicilio en Lytchett House, 13 Freeland Park, Wareham Road, Poole, Dorset, BH16 6FA, United Kingdom.
               </p>
               <div className="mt-4 space-y-1 text-sm text-muted-foreground">
                 <p>Correo de contacto: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a></p>
-                <p>Teléfono: +56 9 6765 8939</p>
               </div>
             </section>
 
@@ -63,7 +60,7 @@ const TerminosCondiciones = () => {
                 1. Aceptación de los términos
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                El acceso al sitio web y la contratación de servicios ofrecidos por 3ClicAds implican la aceptación íntegra
+                El acceso al sitio web y la contratación de servicios ofrecidos por RAGUSA LTD implican la aceptación íntegra
                 de los presentes Términos y Condiciones.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -78,7 +75,7 @@ const TerminosCondiciones = () => {
                 2. Descripción de los servicios
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-3">
-                3ClicAds provee licencias de software de automatización, arquitecturas web estáticas y entregables digitales en formato CSV/XML para Programmatic SEO y campañas publicitarias, incluyendo:
+                RAGUSA LTD provee licencias de software de automatización, arquitecturas web estáticas y entregables digitales en formato CSV/XML para Programmatic SEO y campañas publicitarias, incluyendo:
               </p>
               <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground ml-4">
                 <li>Generación de arquitectura web estática y Sitemaps XML</li>
@@ -104,7 +101,7 @@ const TerminosCondiciones = () => {
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 La contratación se entenderá perfeccionada una vez confirmado el pago correspondiente o aceptada formalmente
-                la propuesta comercial emitida por 3ClicAds.
+                la propuesta comercial emitida por RAGUSA LTD.
               </p>
             </section>
 
@@ -124,7 +121,7 @@ const TerminosCondiciones = () => {
               </ul>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 Los retrasos ocasionados por falta de información o colaboración del cliente podrán afectar los plazos de
-                ejecución sin generar responsabilidad para 3ClicAds.
+                ejecución sin generar responsabilidad para RAGUSA LTD.
               </p>
             </section>
 
@@ -151,7 +148,7 @@ const TerminosCondiciones = () => {
                 6. Política de cancelaciones y reembolsos
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Los servicios prestados por 3ClicAds corresponden a servicios profesionales digitales, personalizados y de
+                Los servicios prestados por RAGUSA LTD corresponden a servicios profesionales digitales, personalizados y de
                 naturaleza intangible.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -173,7 +170,7 @@ const TerminosCondiciones = () => {
                 7. Resultados y expectativas
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                3ClicAds se compromete a ejecutar los servicios contratados con diligencia profesional y de acuerdo con las
+                RAGUSA LTD se compromete a ejecutar los servicios contratados con diligencia profesional y de acuerdo con las
                 mejores prácticas de la industria.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -182,7 +179,7 @@ const TerminosCondiciones = () => {
                 pueden afectar los resultados obtenidos.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
-                Por lo anterior, 3ClicAds no garantiza posiciones específicas en motores de búsqueda, niveles determinados de
+                Por lo anterior, RAGUSA LTD no garantiza posiciones específicas en motores de búsqueda, niveles determinados de
                 tráfico, ventas, conversiones ni resultados económicos concretos.
               </p>
             </section>
@@ -194,14 +191,14 @@ const TerminosCondiciones = () => {
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Todos los contenidos, metodologías, informes, estrategias, desarrollos, diseños y materiales elaborados por
-                3ClicAds conservarán la protección que les otorgue la legislación aplicable.
+                RAGUSA LTD conservarán la protección que les otorgue la legislación aplicable.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 Los derechos de uso específicos que correspondan al cliente serán definidos según la naturaleza del servicio
                 contratado.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
-                El cliente no podrá reproducir, distribuir o comercializar materiales propiedad de 3ClicAds sin autorización
+                El cliente no podrá reproducir, distribuir o comercializar materiales propiedad de RAGUSA LTD sin autorización
                 previa por escrito.
               </p>
             </section>
@@ -222,7 +219,7 @@ const TerminosCondiciones = () => {
                 <li>Actividades contrarias a la legislación colombiana o internacional aplicable</li>
               </ul>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
-                3ClicAds podrá suspender o rechazar servicios cuando existan indicios razonables de uso indebido.
+                RAGUSA LTD podrá suspender o rechazar servicios cuando existan indicios razonables de uso indebido.
               </p>
             </section>
 
@@ -232,7 +229,7 @@ const TerminosCondiciones = () => {
                 10. Limitación de responsabilidad
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                La responsabilidad total de 3ClicAds derivada de cualquier servicio contratado estará limitada al monto
+                La responsabilidad total de RAGUSA LTD derivada de cualquier servicio contratado estará limitada al monto
                 efectivamente pagado por el cliente por dicho servicio.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -251,7 +248,7 @@ const TerminosCondiciones = () => {
                 prestación de servicios, atención comercial, cumplimiento legal y gestión administrativa.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
-                3ClicAds adoptará medidas razonables para proteger la información recibida de sus clientes.
+                RAGUSA LTD adoptará medidas razonables para proteger la información recibida de sus clientes.
               </p>
             </section>
 
@@ -261,7 +258,7 @@ const TerminosCondiciones = () => {
                 12. Modificaciones
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                3ClicAds podrá modificar los presentes Términos y Condiciones cuando resulte necesario para adecuarlos a
+                RAGUSA LTD podrá modificar los presentes Términos y Condiciones cuando resulte necesario para adecuarlos a
                 cambios operativos, comerciales o legales.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
@@ -290,15 +287,17 @@ const TerminosCondiciones = () => {
               </h2>
               <div className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <p className="text-base font-semibold text-foreground">
-                  Alejandro Andrés Matteucci Pizarro
+                  RAGUSA LTD
                 </p>
-                <p className="text-sm text-muted-foreground">Nombre comercial: 3ClicAds</p>
-                <p className="text-sm text-muted-foreground">NIT: 700228703-9</p>
+                <p className="text-sm text-muted-foreground">Tipo de Sociedad: Private Limited Company (Ltd)</p>
+                <p className="text-sm text-muted-foreground">Número de Compañía (CRN): 17561301</p>
+                <p className="text-sm text-muted-foreground">Fecha de Constitución: 4 de noviembre de 2026</p>
+                <p className="text-sm text-muted-foreground">Client ID (UK Postbox): 174834</p>
+                <p className="text-sm text-muted-foreground">Servicio de Recordatorios: eReminder activado (Companies House)</p>
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +56 9 6765 8939</p>
-                <p className="text-sm text-muted-foreground">Dirección: Vitacura 7181, Santiago, Chile</p>
+                <p className="text-sm text-muted-foreground">Dirección: Lytchett House, 13 Freeland Park, Wareham Road, Poole, Dorset, BH16 6FA, United Kingdom</p>
               </div>
             </section>
           </div>
@@ -316,7 +315,7 @@ const TerminosCondiciones = () => {
             <span className="text-border">|</span>
             <Link to="/politica-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</Link>
           </div>
-          <div className="mt-2">© {new Date().getFullYear()} 3clicAds</div>
+          <div className="mt-2">© {new Date().getFullYear()} RAGUSA LTD</div>
         </div>
       </footer>
     </div>

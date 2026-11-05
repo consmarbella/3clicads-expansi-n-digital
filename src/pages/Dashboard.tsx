@@ -10,7 +10,7 @@ export default function Dashboard() {
         <div className="mb-12 relative">
           <div className="absolute top-0 left-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Bienvenido a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">3ClicAds Agency OS</span>
+            Bienvenido a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">RAGUSA LTD Agency OS</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
             El motor de Inteligencia Artificial de grado empresarial que automatiza, escala y reemplaza a tu agencia de marketing tradicional en segundos.
@@ -102,7 +102,7 @@ export default function Dashboard() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
           </div>
-          <span className="text-slate-500 text-sm font-medium">3ClicAds Cloud Infrastructure Online</span>
+          <span className="text-slate-500 text-sm font-medium">RAGUSA LTD Cloud Infrastructure Online</span>
         </div>
 
       </div>

@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <aside className="w-64 bg-slate-900 text-white flex flex-col hidden md:flex border-r border-slate-800 sticky top-0 h-screen">
         <div className="p-6 flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-600/20">3C</div>
-          <span className="text-xl font-bold tracking-tight">3ClicAds</span>
+          <span className="text-xl font-bold tracking-tight">RAGUSA LTD</span>
         </div>
         
         <div className="px-4 py-2 flex-1 mt-4">
@@ -65,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
         <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 md:hidden">
-            <div className="font-bold text-slate-800">3ClicAds</div>
+            <div className="font-bold text-slate-800">RAGUSA LTD</div>
         </header>
         <div className="flex-1 overflow-auto">
           {children}

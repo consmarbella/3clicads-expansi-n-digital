@@ -5,7 +5,7 @@ from typing import List, Dict, Any
 from agents import agency_graph
 import uuid
 
-app = FastAPI(title="3ClicAds Agency OS Backend")
+app = FastAPI(title="RAGUSA LTD Agency OS Backend")
 
 # Allow CORS for React Frontend
 app.add_middleware(

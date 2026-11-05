@@ -17,7 +17,7 @@ const PoliticaPrivacidad = () => {
             <Zap className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="text-lg font-bold tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
-            3clicAds
+            RAGUSA LTD
           </span>
         </Link>
         <Link
@@ -55,12 +55,8 @@ const PoliticaPrivacidad = () => {
                 1. Identificación del Responsable del Tratamiento
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Alejandro Andrés Matteucci Pizarro</strong>, operando bajo el nombre comercial{' '}
-                <strong className="text-foreground">3ClicAds</strong>, con NIT 700228703-9, domicilio en Vitacura 7181, Santiago, Chile,
-                correo electrónico{' '}
-                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> y
-                teléfono +56 9 6765 8939, es el responsable del tratamiento de los datos personales recopilados a través del
-                sitio web 3clicads.com y durante la prestación de sus servicios.
+                <strong className="text-foreground">RAGUSA LTD</strong>, Private Limited Company (Ltd), con Número de Compañía (CRN) 17561301, constituida el 4 de noviembre de 2026, con domicilio en Lytchett House, 13 Freeland Park, Wareham Road, Poole, Dorset, BH16 6FA, United Kingdom, correo electrónico{' '}
+                <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>, es el responsable del tratamiento de los datos personales recopilados a través del sitio web 3clicads.com y durante la prestación de sus servicios.
               </p>
             </section>
 
@@ -82,7 +78,7 @@ const PoliticaPrivacidad = () => {
                 3. Datos Personales Recopilados
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-3">
-                3ClicAds podrá recolectar, almacenar y tratar los siguientes datos personales de clientes, usuarios y prospectos:
+                RAGUSA LTD podrá recolectar, almacenar y tratar los siguientes datos personales de clientes, usuarios y prospectos:
               </p>
               <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground ml-4">
                 <li><strong className="text-foreground">Datos de identificación:</strong> Nombre completo, número de documento de identidad (C.C., C.E., Pasaporte o NIT).</li>
@@ -118,7 +114,7 @@ const PoliticaPrivacidad = () => {
                 De conformidad con el artículo 8 de la Ley 1581 de 2012, los titulares de los datos tienen derecho a:
               </p>
               <ul className="list-disc list-inside space-y-2 text-base text-muted-foreground ml-4">
-                <li>Conocer, actualizar y rectificar sus datos personales frente a 3ClicAds.</li>
+                <li>Conocer, actualizar y rectificar sus datos personales frente a RAGUSA LTD.</li>
                 <li>Solicitar prueba de la autorización otorgada para el tratamiento de sus datos.</li>
                 <li>Ser informados sobre el uso que se le ha dado a sus datos personales.</li>
                 <li>Presentar ante la Superintendencia de Industria y Comercio (SIC) quejas por infracciones a la normativa de protección de datos.</li>
@@ -135,7 +131,7 @@ const PoliticaPrivacidad = () => {
                 Para ejercer cualquiera de los derechos de acceso, rectificación, actualización o supresión de datos, el
                 titular podrá enviar una solicitud por escrito al correo electrónico{' '}
                 <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a> o
-                a la dirección física Vitacura 7181, Santiago, Chile.
+                a la dirección física Lytchett House, 13 Freeland Park, Wareham Road, Poole, Dorset, BH16 6FA, United Kingdom.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed mt-3">
                 La solicitud deberá contener: nombre del titular, descripción clara de la petición, datos de contacto para
@@ -149,7 +145,7 @@ const PoliticaPrivacidad = () => {
                 7. Seguridad de la Información
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                3ClicAds adopta medidas de seguridad técnicas, administrativas y humanas razonables para proteger la información
+                RAGUSA LTD adopta medidas de seguridad técnicas, administrativas y humanas razonables para proteger la información
                 personal contra acceso no autorizado, pérdida, alteración o divulgación.
               </p>
             </section>
@@ -160,7 +156,7 @@ const PoliticaPrivacidad = () => {
                 8. Transferencia y Transmisión de Datos a Terceros
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                3ClicAds no venderá, alquilará ni cederá datos personales a terceros. Los datos podrán ser transmitidos a
+                RAGUSA LTD no venderá, alquilará ni cederá datos personales a terceros. Los datos podrán ser transmitidos a
                 proveedores de servicios tecnológicos, plataformas de analítica y pasarelas de pago (como procesadores KYB/KYC)
                 únicamente en la medida en que sea necesario para la ejecución del servicio contratado y el cumplimiento legal.
               </p>
@@ -172,7 +168,7 @@ const PoliticaPrivacidad = () => {
                 9. Modificaciones a la Política de Privacidad
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
-                3ClicAds se reserva el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio
+                RAGUSA LTD se reserva el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio
                 será publicado de manera oportuna en el sitio web 3clicads.com.
               </p>
             </section>
@@ -187,14 +183,17 @@ const PoliticaPrivacidad = () => {
               </p>
               <div className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <p className="text-base font-semibold text-foreground">
-                  Alejandro Andrés Matteucci Pizarro (3ClicAds)
+                  RAGUSA LTD
                 </p>
-                <p className="text-sm text-muted-foreground">NIT: 700228703-9</p>
+                <p className="text-sm text-muted-foreground">Tipo de Sociedad: Private Limited Company (Ltd)</p>
+                <p className="text-sm text-muted-foreground">Número de Compañía (CRN): 17561301</p>
+                <p className="text-sm text-muted-foreground">Fecha de Constitución: 4 de noviembre de 2026</p>
+                <p className="text-sm text-muted-foreground">Client ID (UK Postbox): 174834</p>
+                <p className="text-sm text-muted-foreground">Servicio de Recordatorios: eReminder activado (Companies House)</p>
                 <p className="text-sm text-muted-foreground">
                   Correo: <a href="mailto:contacto@3clicads.com" className="text-primary hover:underline">contacto@3clicads.com</a>
                 </p>
-                <p className="text-sm text-muted-foreground">Teléfono: +56 9 6765 8939</p>
-                <p className="text-sm text-muted-foreground">Dirección: Vitacura 7181, Santiago, Chile</p>
+                <p className="text-sm text-muted-foreground">Dirección: Lytchett House, 13 Freeland Park, Wareham Road, Poole, Dorset, BH16 6FA, United Kingdom</p>
               </div>
             </section>
           </div>
@@ -212,7 +211,7 @@ const PoliticaPrivacidad = () => {
             <span className="text-border">|</span>
             <Link to="/politica-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</Link>
           </div>
-          <div className="mt-2">© {new Date().getFullYear()} 3clicAds</div>
+          <div className="mt-2">© {new Date().getFullYear()} RAGUSA LTD</div>
         </div>
       </footer>
     </div>

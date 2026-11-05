@@ -300,7 +300,7 @@ export default function Generador() {
             3C
           </div>
           <div>
-            <span className="text-lg font-bold text-white tracking-tight">3ClicAds <span className="text-emerald-400 text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">Agency OS</span></span>
+            <span className="text-lg font-bold text-white tracking-tight">RAGUSA LTD <span className="text-emerald-400 text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">Agency OS</span></span>
             <p className="text-xs text-slate-400">Google Ads Multi-SKU & RSA AI Engine</p>
           </div>
         </div>
@@ -685,7 +685,7 @@ export default function Generador() {
                       headlines={jobResults[activeAdGroupIndex]?.rsa.headlines || []}
                       descriptions={jobResults[activeAdGroupIndex]?.rsa.descriptions || []}
                       finalUrl={formData.website_url || "https://www.3clicads.com"}
-                      businessName={formData.business_name || "3ClicAds"}
+                      businessName={formData.business_name || "RAGUSA LTD"}
                     />
 
                     {/* Headlines & Descriptions List */}

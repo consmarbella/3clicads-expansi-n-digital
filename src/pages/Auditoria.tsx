@@ -288,7 +288,7 @@ const Auditoria = () => {
             className="text-lg font-bold tracking-tight text-foreground"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            3clicAds
+            RAGUSA LTD
           </span>
         </Link>
         <div className="flex items-center gap-6">
@@ -662,7 +662,7 @@ const Auditoria = () => {
             <span className="text-border">|</span>
             <Link to="/politica-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</Link>
           </div>
-          <div className="mt-2">© {new Date().getFullYear()} 3clicAds — Santiago, Chile</div>
+          <div className="mt-2">© {new Date().getFullYear()} RAGUSA LTD</div>
         </div>
       </footer>
 
